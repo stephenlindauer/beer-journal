@@ -21,14 +21,18 @@
 #import "BDBeerSuggestionCell.h"
 #import "BDSuggestedBeersLayout.h"
 #import "NSManagedObjectContext+Utils.h"
+#import "BDSetLocationViewController.h"
 
 
-@interface BDAddBeerLogViewController () <CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate>
+
+@interface BDAddBeerLogViewController () <CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate, BDSetLocationDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) Location *suggestedLocation;
 @property (nonatomic, strong) UICollectionView *suggestionsCollectionsView;
 @property (nonatomic, strong) NSArray <Beer *> *beers;
+@property (nonatomic, strong) NSArray <Location *> *locations;
+
 
 @end
 
@@ -56,6 +60,23 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(saveBeerLog)];
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Actions
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"setLocation"]) {
+        BDSetLocationViewController *setLocationViewController = segue.destinationViewController;
+        setLocationViewController.locations = self.locations;
+        setLocationViewController.delegate = self;
+    }
+}
+
+
 - (void)saveBeerLog
 {
     BeerLog *log = [BeerLog createEntity];
@@ -81,9 +102,17 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)changeLocation:(id)sender {
+    
+}
+
+- (IBAction)changeDate:(id)sender {
+    
+}
+
+- (IBAction)roundSliderToValue:(id)sender {
+    NSLog(@"roundSliderToValue");
+    self.ratingSlider.value = (int)(self.ratingSlider.value + 0.5);
 }
 
 - (void)fetchLocationsFrom:(CLLocation *)location
@@ -94,6 +123,7 @@
                 Location *suggestedLocation = locations[0];
                 self.locationLabel.text = suggestedLocation.name;
                 self.suggestedLocation = suggestedLocation;
+                self.locations = locations;
             });
         }
         else {
@@ -176,4 +206,13 @@
     
     return YES;
 }
+
+#pragma mark - Set Location delegate
+
+- (void)locationChangedTo:(Location *)location
+{
+    self.locationLabel.text = location.name;
+    self.suggestedLocation = location;
+}
+
 @end

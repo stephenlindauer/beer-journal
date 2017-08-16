@@ -32,7 +32,7 @@
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         
         NSMutableArray *locations = [NSMutableArray new];
-        NSLog(@"response: %@", responseObject);
+
         for (NSDictionary *dict in responseObject[@"businesses"]) {
             [locations addObject:[Location locationFromDictionary:dict]];
         }

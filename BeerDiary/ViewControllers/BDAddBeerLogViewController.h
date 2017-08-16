@@ -10,9 +10,14 @@
 
 @interface BDAddBeerLogViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UITextField *beerTextField;
 @property (weak, nonatomic) IBOutlet UITextField *breweryTextField;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UISlider *ratingSlider;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
+- (IBAction)changeLocation:(id)sender;
+- (IBAction)changeDate:(id)sender;
+- (IBAction)roundSliderToValue:(id)sender;
 
 @end

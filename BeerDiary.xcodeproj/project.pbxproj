@@ -41,6 +41,9 @@
 		2C5B16A01F3E060600E1D32B /* LUAutocompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B169C1F3E060500E1D32B /* LUAutocompleteView.swift */; };
 		2C5B16A11F3E060600E1D32B /* LUAutocompleteViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B169D1F3E060500E1D32B /* LUAutocompleteViewDelegate.swift */; };
 		2C5B16A51F3E06A100E1D32B /* BDAddBeerLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B16A41F3E06A100E1D32B /* BDAddBeerLogViewController.m */; };
+		2C8ACD391F44E84E003FAABC /* BDSetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8ACD381F44E84E003FAABC /* BDSetLocationViewController.m */; };
+		2C8ACD3D1F44ED83003FAABC /* BDLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8ACD3C1F44ED83003FAABC /* BDLocationCell.m */; };
+		2C8ACD401F44F653003FAABC /* BDGenericTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8ACD3F1F44F653003FAABC /* BDGenericTextCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +108,12 @@
 		2C5B169D1F3E060500E1D32B /* LUAutocompleteViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUAutocompleteViewDelegate.swift; sourceTree = "<group>"; };
 		2C5B16A31F3E06A100E1D32B /* BDAddBeerLogViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDAddBeerLogViewController.h; sourceTree = "<group>"; };
 		2C5B16A41F3E06A100E1D32B /* BDAddBeerLogViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDAddBeerLogViewController.m; sourceTree = "<group>"; };
+		2C8ACD371F44E84E003FAABC /* BDSetLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSetLocationViewController.h; sourceTree = "<group>"; };
+		2C8ACD381F44E84E003FAABC /* BDSetLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDSetLocationViewController.m; sourceTree = "<group>"; };
+		2C8ACD3B1F44ED83003FAABC /* BDLocationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDLocationCell.h; sourceTree = "<group>"; };
+		2C8ACD3C1F44ED83003FAABC /* BDLocationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDLocationCell.m; sourceTree = "<group>"; };
+		2C8ACD3E1F44F653003FAABC /* BDGenericTextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDGenericTextCell.h; sourceTree = "<group>"; };
+		2C8ACD3F1F44F653003FAABC /* BDGenericTextCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDGenericTextCell.m; sourceTree = "<group>"; };
 		D7AA1C856AF2142CD2D523F0 /* Pods_BeerDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E065A342296CE5953C019C4B /* Pods-BeerDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeerDiary/Pods-BeerDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		F6505CE224BA0519D4C66E36 /* Pods-BeerDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerDiary/Pods-BeerDiary.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +170,7 @@
 				2C5B16911F3DFBE300E1D32B /* ios-utils */,
 				2C26493E1F3DF05B0022F5BE /* Domain */,
 				2C26493F1F3DF0E20022F5BE /* ViewControllers */,
+				2C8ACD3A1F44ED61003FAABC /* TableViewCells */,
 				2C22994A1F44921300E7CD85 /* CollectionView */,
 				2C2649131F3DEEB50022F5BE /* AppDelegate.h */,
 				2C2649141F3DEEB50022F5BE /* AppDelegate.m */,
@@ -172,8 +182,6 @@
 				2C2649241F3DEEB50022F5BE /* Info.plist */,
 				2C2649251F3DEEB50022F5BE /* main.m */,
 				2C26491C1F3DEEB50022F5BE /* BeerDiary.xcdatamodeld */,
-				2C5B168E1F3DF9D400E1D32B /* BDBeerLogCell.h */,
-				2C5B168F1F3DF9D400E1D32B /* BDBeerLogCell.m */,
 				2C5B16981F3E060400E1D32B /* BeerDiary-Bridging-Header.h */,
 				2C0EE0DB1F4232B0000C6BE8 /* BDClient.h */,
 				2C0EE0DC1F4232B0000C6BE8 /* BDClient.m */,
@@ -216,6 +224,8 @@
 				2C2649411F3DF1220022F5BE /* BDRecentBeersViewController.m */,
 				2C5B16A31F3E06A100E1D32B /* BDAddBeerLogViewController.h */,
 				2C5B16A41F3E06A100E1D32B /* BDAddBeerLogViewController.m */,
+				2C8ACD371F44E84E003FAABC /* BDSetLocationViewController.h */,
+				2C8ACD381F44E84E003FAABC /* BDSetLocationViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -245,6 +255,19 @@
 				2C5B169D1F3E060500E1D32B /* LUAutocompleteViewDelegate.swift */,
 			);
 			path = LUAutocomplete;
+			sourceTree = "<group>";
+		};
+		2C8ACD3A1F44ED61003FAABC /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				2C5B168E1F3DF9D400E1D32B /* BDBeerLogCell.h */,
+				2C5B168F1F3DF9D400E1D32B /* BDBeerLogCell.m */,
+				2C8ACD3B1F44ED83003FAABC /* BDLocationCell.h */,
+				2C8ACD3C1F44ED83003FAABC /* BDLocationCell.m */,
+				2C8ACD3E1F44F653003FAABC /* BDGenericTextCell.h */,
+				2C8ACD3F1F44F653003FAABC /* BDGenericTextCell.m */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		7B9759F1D6E555C75B63DE0B /* Frameworks */ = {
@@ -403,6 +426,7 @@
 				2C5B169F1F3E060600E1D32B /* LUAutocompleteTableViewCell.swift in Sources */,
 				2C5B16901F3DF9D400E1D32B /* BDBeerLogCell.m in Sources */,
 				2C0EE0E91F423D3F000C6BE8 /* Location+CoreDataProperties.m in Sources */,
+				2C8ACD391F44E84E003FAABC /* BDSetLocationViewController.m in Sources */,
 				2C22994D1F44923100E7CD85 /* BDSuggestedBeersLayout.m in Sources */,
 				2C5B169E1F3E060600E1D32B /* LUAutocompleteViewDataSource.swift in Sources */,
 				2C0EE0E81F423D3F000C6BE8 /* Location+CoreDataClass.m in Sources */,
@@ -414,7 +438,9 @@
 				2C0EE0EE1F423DE0000C6BE8 /* NSManagedObject+CoreData.m in Sources */,
 				2C26493C1F3DF0540022F5BE /* Beer+CoreDataClass.m in Sources */,
 				2C0EE0DD1F4232B0000C6BE8 /* BDClient.m in Sources */,
+				2C8ACD3D1F44ED83003FAABC /* BDLocationCell.m in Sources */,
 				2C2649181F3DEEB50022F5BE /* ViewController.m in Sources */,
+				2C8ACD401F44F653003FAABC /* BDGenericTextCell.m in Sources */,
 				2C5B16A11F3E060600E1D32B /* LUAutocompleteViewDelegate.swift in Sources */,
 				2C2299491F44865000E7CD85 /* BDBeerSuggestionCell.m in Sources */,
 				2C2649261F3DEEB50022F5BE /* main.m in Sources */,
