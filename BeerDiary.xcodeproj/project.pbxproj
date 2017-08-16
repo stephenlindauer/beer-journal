@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19E131441BE4DCB45ECAF5FF /* Pods_BeerDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AA1C856AF2142CD2D523F0 /* Pods_BeerDiary.framework */; };
+		2C0EE0DD1F4232B0000C6BE8 /* BDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EE0DC1F4232B0000C6BE8 /* BDClient.m */; };
+		2C0EE0E01F423319000C6BE8 /* BDLocationClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EE0DF1F423319000C6BE8 /* BDLocationClient.m */; };
+		2C0EE0E21F423720000C6BE8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0EE0E11F423720000C6BE8 /* CoreLocation.framework */; };
+		2C0EE0E81F423D3F000C6BE8 /* Location+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EE0E51F423D3F000C6BE8 /* Location+CoreDataClass.m */; };
+		2C0EE0E91F423D3F000C6BE8 /* Location+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EE0E71F423D3F000C6BE8 /* Location+CoreDataProperties.m */; };
+		2C0EE0EE1F423DE0000C6BE8 /* NSManagedObject+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EE0EB1F423DDE000C6BE8 /* NSManagedObject+CoreData.m */; };
+		2C0EE0EF1F423DE0000C6BE8 /* NSManagedObjectContext+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EE0EC1F423DDF000C6BE8 /* NSManagedObjectContext+Utils.m */; };
+		2C2299461F447C3500E7CD85 /* FrameUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2299441F447B6400E7CD85 /* FrameUtils.m */; };
+		2C2299491F44865000E7CD85 /* BDBeerSuggestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2299481F44865000E7CD85 /* BDBeerSuggestionCell.m */; };
+		2C22994D1F44923100E7CD85 /* BDSuggestedBeersLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C22994C1F44923100E7CD85 /* BDSuggestedBeersLayout.m */; };
+		2C22994E1F44BA8800E7CD85 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B16931F3DFBE300E1D32B /* NSDate+Helper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C22994F1F44BA8800E7CD85 /* UIAlertController+Quickie.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B16951F3DFBE300E1D32B /* UIAlertController+Quickie.m */; };
+		2C2299501F44BA8800E7CD85 /* UIViewController+ErrorAndLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B16971F3DFBE300E1D32B /* UIViewController+ErrorAndLoading.m */; };
+		2C2649151F3DEEB50022F5BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2649141F3DEEB50022F5BE /* AppDelegate.m */; };
+		2C2649181F3DEEB50022F5BE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2649171F3DEEB50022F5BE /* ViewController.m */; };
+		2C26491B1F3DEEB50022F5BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2649191F3DEEB50022F5BE /* Main.storyboard */; };
+		2C26491E1F3DEEB50022F5BE /* BeerDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C26491C1F3DEEB50022F5BE /* BeerDiary.xcdatamodeld */; };
+		2C2649201F3DEEB50022F5BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C26491F1F3DEEB50022F5BE /* Assets.xcassets */; };
+		2C2649231F3DEEB50022F5BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2649211F3DEEB50022F5BE /* LaunchScreen.storyboard */; };
+		2C2649261F3DEEB50022F5BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2649251F3DEEB50022F5BE /* main.m */; };
+		2C2649381F3DF0540022F5BE /* Brewery+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C26492D1F3DF0540022F5BE /* Brewery+CoreDataClass.m */; };
+		2C2649391F3DF0540022F5BE /* Brewery+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C26492F1F3DF0540022F5BE /* Brewery+CoreDataProperties.m */; };
+		2C26493A1F3DF0540022F5BE /* BeerLog+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2649311F3DF0540022F5BE /* BeerLog+CoreDataClass.m */; };
+		2C26493B1F3DF0540022F5BE /* BeerLog+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2649331F3DF0540022F5BE /* BeerLog+CoreDataProperties.m */; };
+		2C26493C1F3DF0540022F5BE /* Beer+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2649351F3DF0540022F5BE /* Beer+CoreDataClass.m */; };
+		2C26493D1F3DF0540022F5BE /* Beer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2649371F3DF0540022F5BE /* Beer+CoreDataProperties.m */; };
+		2C2649421F3DF1220022F5BE /* BDRecentBeersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2649411F3DF1220022F5BE /* BDRecentBeersViewController.m */; };
+		2C5B16901F3DF9D400E1D32B /* BDBeerLogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B168F1F3DF9D400E1D32B /* BDBeerLogCell.m */; };
+		2C5B169E1F3E060600E1D32B /* LUAutocompleteViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B169A1F3E060500E1D32B /* LUAutocompleteViewDataSource.swift */; };
+		2C5B169F1F3E060600E1D32B /* LUAutocompleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B169B1F3E060500E1D32B /* LUAutocompleteTableViewCell.swift */; };
+		2C5B16A01F3E060600E1D32B /* LUAutocompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B169C1F3E060500E1D32B /* LUAutocompleteView.swift */; };
+		2C5B16A11F3E060600E1D32B /* LUAutocompleteViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B169D1F3E060500E1D32B /* LUAutocompleteViewDelegate.swift */; };
+		2C5B16A51F3E06A100E1D32B /* BDAddBeerLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B16A41F3E06A100E1D32B /* BDAddBeerLogViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C0EE0DB1F4232B0000C6BE8 /* BDClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDClient.h; sourceTree = "<group>"; };
+		2C0EE0DC1F4232B0000C6BE8 /* BDClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDClient.m; sourceTree = "<group>"; };
+		2C0EE0DE1F423319000C6BE8 /* BDLocationClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDLocationClient.h; sourceTree = "<group>"; };
+		2C0EE0DF1F423319000C6BE8 /* BDLocationClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDLocationClient.m; sourceTree = "<group>"; };
+		2C0EE0E11F423720000C6BE8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2C0EE0E31F423C9A000C6BE8 /* BeerDiary 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BeerDiary 2.xcdatamodel"; sourceTree = "<group>"; };
+		2C0EE0E41F423D3F000C6BE8 /* Location+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Location+CoreDataClass.h"; path = "BeerDiary/models/Location+CoreDataClass.h"; sourceTree = "<group>"; };
+		2C0EE0E51F423D3F000C6BE8 /* Location+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Location+CoreDataClass.m"; path = "BeerDiary/models/Location+CoreDataClass.m"; sourceTree = "<group>"; };
+		2C0EE0E61F423D3F000C6BE8 /* Location+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Location+CoreDataProperties.h"; path = "BeerDiary/models/Location+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2C0EE0E71F423D3F000C6BE8 /* Location+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Location+CoreDataProperties.m"; path = "BeerDiary/models/Location+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2C0EE0EA1F423DDE000C6BE8 /* NSManagedObject+CoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+CoreData.h"; sourceTree = "<group>"; };
+		2C0EE0EB1F423DDE000C6BE8 /* NSManagedObject+CoreData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+CoreData.m"; sourceTree = "<group>"; };
+		2C0EE0EC1F423DDF000C6BE8 /* NSManagedObjectContext+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Utils.m"; sourceTree = "<group>"; };
+		2C0EE0ED1F423DDF000C6BE8 /* NSManagedObjectContext+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Utils.h"; sourceTree = "<group>"; };
+		2C2299441F447B6400E7CD85 /* FrameUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrameUtils.m; sourceTree = "<group>"; };
+		2C2299451F447B6400E7CD85 /* FrameUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameUtils.h; sourceTree = "<group>"; };
+		2C2299471F44865000E7CD85 /* BDBeerSuggestionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDBeerSuggestionCell.h; sourceTree = "<group>"; };
+		2C2299481F44865000E7CD85 /* BDBeerSuggestionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDBeerSuggestionCell.m; sourceTree = "<group>"; };
+		2C22994B1F44923100E7CD85 /* BDSuggestedBeersLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSuggestedBeersLayout.h; sourceTree = "<group>"; };
+		2C22994C1F44923100E7CD85 /* BDSuggestedBeersLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDSuggestedBeersLayout.m; sourceTree = "<group>"; };
+		2C2649101F3DEEB50022F5BE /* BeerDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C2649131F3DEEB50022F5BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2C2649141F3DEEB50022F5BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2C2649161F3DEEB50022F5BE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2C2649171F3DEEB50022F5BE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2C26491A1F3DEEB50022F5BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2C26491D1F3DEEB50022F5BE /* BeerDiary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BeerDiary.xcdatamodel; sourceTree = "<group>"; };
+		2C26491F1F3DEEB50022F5BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C2649221F3DEEB50022F5BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2C2649241F3DEEB50022F5BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C2649251F3DEEB50022F5BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C26492C1F3DF0540022F5BE /* Brewery+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Brewery+CoreDataClass.h"; path = "BeerDiary/models/Brewery+CoreDataClass.h"; sourceTree = "<group>"; };
+		2C26492D1F3DF0540022F5BE /* Brewery+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Brewery+CoreDataClass.m"; path = "BeerDiary/models/Brewery+CoreDataClass.m"; sourceTree = "<group>"; };
+		2C26492E1F3DF0540022F5BE /* Brewery+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Brewery+CoreDataProperties.h"; path = "BeerDiary/models/Brewery+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2C26492F1F3DF0540022F5BE /* Brewery+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Brewery+CoreDataProperties.m"; path = "BeerDiary/models/Brewery+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2C2649301F3DF0540022F5BE /* BeerLog+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BeerLog+CoreDataClass.h"; path = "BeerDiary/models/BeerLog+CoreDataClass.h"; sourceTree = "<group>"; };
+		2C2649311F3DF0540022F5BE /* BeerLog+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "BeerLog+CoreDataClass.m"; path = "BeerDiary/models/BeerLog+CoreDataClass.m"; sourceTree = "<group>"; };
+		2C2649321F3DF0540022F5BE /* BeerLog+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BeerLog+CoreDataProperties.h"; path = "BeerDiary/models/BeerLog+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2C2649331F3DF0540022F5BE /* BeerLog+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "BeerLog+CoreDataProperties.m"; path = "BeerDiary/models/BeerLog+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2C2649341F3DF0540022F5BE /* Beer+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Beer+CoreDataClass.h"; path = "BeerDiary/models/Beer+CoreDataClass.h"; sourceTree = "<group>"; };
+		2C2649351F3DF0540022F5BE /* Beer+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Beer+CoreDataClass.m"; path = "BeerDiary/models/Beer+CoreDataClass.m"; sourceTree = "<group>"; };
+		2C2649361F3DF0540022F5BE /* Beer+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Beer+CoreDataProperties.h"; path = "BeerDiary/models/Beer+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2C2649371F3DF0540022F5BE /* Beer+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Beer+CoreDataProperties.m"; path = "BeerDiary/models/Beer+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2C2649401F3DF1220022F5BE /* BDRecentBeersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDRecentBeersViewController.h; sourceTree = "<group>"; };
+		2C2649411F3DF1220022F5BE /* BDRecentBeersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDRecentBeersViewController.m; sourceTree = "<group>"; };
+		2C5B168E1F3DF9D400E1D32B /* BDBeerLogCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDBeerLogCell.h; sourceTree = "<group>"; };
+		2C5B168F1F3DF9D400E1D32B /* BDBeerLogCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDBeerLogCell.m; sourceTree = "<group>"; };
+		2C5B16921F3DFBE300E1D32B /* NSDate+Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		2C5B16931F3DFBE300E1D32B /* NSDate+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		2C5B16941F3DFBE300E1D32B /* UIAlertController+Quickie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Quickie.h"; sourceTree = "<group>"; };
+		2C5B16951F3DFBE300E1D32B /* UIAlertController+Quickie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Quickie.m"; sourceTree = "<group>"; };
+		2C5B16961F3DFBE300E1D32B /* UIViewController+ErrorAndLoading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ErrorAndLoading.h"; sourceTree = "<group>"; };
+		2C5B16971F3DFBE300E1D32B /* UIViewController+ErrorAndLoading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ErrorAndLoading.m"; sourceTree = "<group>"; };
+		2C5B16981F3E060400E1D32B /* BeerDiary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeerDiary-Bridging-Header.h"; sourceTree = "<group>"; };
+		2C5B16991F3E060500E1D32B /* LUAutocompleteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUAutocompleteView.h; sourceTree = "<group>"; };
+		2C5B169A1F3E060500E1D32B /* LUAutocompleteViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUAutocompleteViewDataSource.swift; sourceTree = "<group>"; };
+		2C5B169B1F3E060500E1D32B /* LUAutocompleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUAutocompleteTableViewCell.swift; sourceTree = "<group>"; };
+		2C5B169C1F3E060500E1D32B /* LUAutocompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUAutocompleteView.swift; sourceTree = "<group>"; };
+		2C5B169D1F3E060500E1D32B /* LUAutocompleteViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUAutocompleteViewDelegate.swift; sourceTree = "<group>"; };
+		2C5B16A31F3E06A100E1D32B /* BDAddBeerLogViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDAddBeerLogViewController.h; sourceTree = "<group>"; };
+		2C5B16A41F3E06A100E1D32B /* BDAddBeerLogViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDAddBeerLogViewController.m; sourceTree = "<group>"; };
+		D7AA1C856AF2142CD2D523F0 /* Pods_BeerDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E065A342296CE5953C019C4B /* Pods-BeerDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeerDiary/Pods-BeerDiary.debug.xcconfig"; sourceTree = "<group>"; };
+		F6505CE224BA0519D4C66E36 /* Pods-BeerDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerDiary/Pods-BeerDiary.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C26490D1F3DEEB50022F5BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C0EE0E21F423720000C6BE8 /* CoreLocation.framework in Frameworks */,
+				19E131441BE4DCB45ECAF5FF /* Pods_BeerDiary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C22994A1F44921300E7CD85 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				2C22994B1F44923100E7CD85 /* BDSuggestedBeersLayout.h */,
+				2C22994C1F44923100E7CD85 /* BDSuggestedBeersLayout.m */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		2C2649071F3DEEB50022F5BE = {
+			isa = PBXGroup;
+			children = (
+				2C2649121F3DEEB50022F5BE /* BeerDiary */,
+				2C2649111F3DEEB50022F5BE /* Products */,
+				D63B472114A57E87E5E3ED16 /* Pods */,
+				7B9759F1D6E555C75B63DE0B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2C2649111F3DEEB50022F5BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C2649101F3DEEB50022F5BE /* BeerDiary.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C2649121F3DEEB50022F5BE /* BeerDiary */ = {
+			isa = PBXGroup;
+			children = (
+				2C0EE0EA1F423DDE000C6BE8 /* NSManagedObject+CoreData.h */,
+				2C0EE0EB1F423DDE000C6BE8 /* NSManagedObject+CoreData.m */,
+				2C0EE0ED1F423DDF000C6BE8 /* NSManagedObjectContext+Utils.h */,
+				2C0EE0EC1F423DDF000C6BE8 /* NSManagedObjectContext+Utils.m */,
+				2C5B16A21F3E060C00E1D32B /* LUAutocomplete */,
+				2C5B16911F3DFBE300E1D32B /* ios-utils */,
+				2C26493E1F3DF05B0022F5BE /* Domain */,
+				2C26493F1F3DF0E20022F5BE /* ViewControllers */,
+				2C22994A1F44921300E7CD85 /* CollectionView */,
+				2C2649131F3DEEB50022F5BE /* AppDelegate.h */,
+				2C2649141F3DEEB50022F5BE /* AppDelegate.m */,
+				2C2649161F3DEEB50022F5BE /* ViewController.h */,
+				2C2649171F3DEEB50022F5BE /* ViewController.m */,
+				2C2649191F3DEEB50022F5BE /* Main.storyboard */,
+				2C26491F1F3DEEB50022F5BE /* Assets.xcassets */,
+				2C2649211F3DEEB50022F5BE /* LaunchScreen.storyboard */,
+				2C2649241F3DEEB50022F5BE /* Info.plist */,
+				2C2649251F3DEEB50022F5BE /* main.m */,
+				2C26491C1F3DEEB50022F5BE /* BeerDiary.xcdatamodeld */,
+				2C5B168E1F3DF9D400E1D32B /* BDBeerLogCell.h */,
+				2C5B168F1F3DF9D400E1D32B /* BDBeerLogCell.m */,
+				2C5B16981F3E060400E1D32B /* BeerDiary-Bridging-Header.h */,
+				2C0EE0DB1F4232B0000C6BE8 /* BDClient.h */,
+				2C0EE0DC1F4232B0000C6BE8 /* BDClient.m */,
+				2C0EE0DE1F423319000C6BE8 /* BDLocationClient.h */,
+				2C0EE0DF1F423319000C6BE8 /* BDLocationClient.m */,
+				2C2299471F44865000E7CD85 /* BDBeerSuggestionCell.h */,
+				2C2299481F44865000E7CD85 /* BDBeerSuggestionCell.m */,
+			);
+			path = BeerDiary;
+			sourceTree = "<group>";
+		};
+		2C26493E1F3DF05B0022F5BE /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2C0EE0E41F423D3F000C6BE8 /* Location+CoreDataClass.h */,
+				2C0EE0E51F423D3F000C6BE8 /* Location+CoreDataClass.m */,
+				2C0EE0E61F423D3F000C6BE8 /* Location+CoreDataProperties.h */,
+				2C0EE0E71F423D3F000C6BE8 /* Location+CoreDataProperties.m */,
+				2C26492C1F3DF0540022F5BE /* Brewery+CoreDataClass.h */,
+				2C26492D1F3DF0540022F5BE /* Brewery+CoreDataClass.m */,
+				2C26492E1F3DF0540022F5BE /* Brewery+CoreDataProperties.h */,
+				2C26492F1F3DF0540022F5BE /* Brewery+CoreDataProperties.m */,
+				2C2649301F3DF0540022F5BE /* BeerLog+CoreDataClass.h */,
+				2C2649311F3DF0540022F5BE /* BeerLog+CoreDataClass.m */,
+				2C2649321F3DF0540022F5BE /* BeerLog+CoreDataProperties.h */,
+				2C2649331F3DF0540022F5BE /* BeerLog+CoreDataProperties.m */,
+				2C2649341F3DF0540022F5BE /* Beer+CoreDataClass.h */,
+				2C2649351F3DF0540022F5BE /* Beer+CoreDataClass.m */,
+				2C2649361F3DF0540022F5BE /* Beer+CoreDataProperties.h */,
+				2C2649371F3DF0540022F5BE /* Beer+CoreDataProperties.m */,
+			);
+			name = Domain;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		2C26493F1F3DF0E20022F5BE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C2649401F3DF1220022F5BE /* BDRecentBeersViewController.h */,
+				2C2649411F3DF1220022F5BE /* BDRecentBeersViewController.m */,
+				2C5B16A31F3E06A100E1D32B /* BDAddBeerLogViewController.h */,
+				2C5B16A41F3E06A100E1D32B /* BDAddBeerLogViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2C5B16911F3DFBE300E1D32B /* ios-utils */ = {
+			isa = PBXGroup;
+			children = (
+				2C2299451F447B6400E7CD85 /* FrameUtils.h */,
+				2C2299441F447B6400E7CD85 /* FrameUtils.m */,
+				2C5B16921F3DFBE300E1D32B /* NSDate+Helper.h */,
+				2C5B16931F3DFBE300E1D32B /* NSDate+Helper.m */,
+				2C5B16941F3DFBE300E1D32B /* UIAlertController+Quickie.h */,
+				2C5B16951F3DFBE300E1D32B /* UIAlertController+Quickie.m */,
+				2C5B16961F3DFBE300E1D32B /* UIViewController+ErrorAndLoading.h */,
+				2C5B16971F3DFBE300E1D32B /* UIViewController+ErrorAndLoading.m */,
+			);
+			path = "ios-utils";
+			sourceTree = "<group>";
+		};
+		2C5B16A21F3E060C00E1D32B /* LUAutocomplete */ = {
+			isa = PBXGroup;
+			children = (
+				2C5B169B1F3E060500E1D32B /* LUAutocompleteTableViewCell.swift */,
+				2C5B16991F3E060500E1D32B /* LUAutocompleteView.h */,
+				2C5B169C1F3E060500E1D32B /* LUAutocompleteView.swift */,
+				2C5B169A1F3E060500E1D32B /* LUAutocompleteViewDataSource.swift */,
+				2C5B169D1F3E060500E1D32B /* LUAutocompleteViewDelegate.swift */,
+			);
+			path = LUAutocomplete;
+			sourceTree = "<group>";
+		};
+		7B9759F1D6E555C75B63DE0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C0EE0E11F423720000C6BE8 /* CoreLocation.framework */,
+				D7AA1C856AF2142CD2D523F0 /* Pods_BeerDiary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D63B472114A57E87E5E3ED16 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E065A342296CE5953C019C4B /* Pods-BeerDiary.debug.xcconfig */,
+				F6505CE224BA0519D4C66E36 /* Pods-BeerDiary.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C26490F1F3DEEB50022F5BE /* BeerDiary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C2649291F3DEEB50022F5BE /* Build configuration list for PBXNativeTarget "BeerDiary" */;
+			buildPhases = (
+				0AAADA04B2E34AD0F11F1F1D /* [CP] Check Pods Manifest.lock */,
+				2C26490C1F3DEEB50022F5BE /* Sources */,
+				2C26490D1F3DEEB50022F5BE /* Frameworks */,
+				2C26490E1F3DEEB50022F5BE /* Resources */,
+				6FA8C9C3D37340E95ED7FDAA /* [CP] Embed Pods Frameworks */,
+				BCD1CAD78C2131A113A16C93 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BeerDiary;
+			productName = BeerDiary;
+			productReference = 2C2649101F3DEEB50022F5BE /* BeerDiary.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C2649081F3DEEB50022F5BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Stephen Lindauer";
+				TargetAttributes = {
+					2C26490F1F3DEEB50022F5BE = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+					};
+				};
+			};
+			buildConfigurationList = 2C26490B1F3DEEB50022F5BE /* Build configuration list for PBXProject "BeerDiary" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C2649071F3DEEB50022F5BE;
+			productRefGroup = 2C2649111F3DEEB50022F5BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C26490F1F3DEEB50022F5BE /* BeerDiary */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C26490E1F3DEEB50022F5BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C2649231F3DEEB50022F5BE /* LaunchScreen.storyboard in Resources */,
+				2C2649201F3DEEB50022F5BE /* Assets.xcassets in Resources */,
+				2C26491B1F3DEEB50022F5BE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0AAADA04B2E34AD0F11F1F1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeerDiary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FA8C9C3D37340E95ED7FDAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BeerDiary/Pods-BeerDiary-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeerDiary/Pods-BeerDiary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCD1CAD78C2131A113A16C93 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeerDiary/Pods-BeerDiary-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C26490C1F3DEEB50022F5BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C22994E1F44BA8800E7CD85 /* NSDate+Helper.m in Sources */,
+				2C22994F1F44BA8800E7CD85 /* UIAlertController+Quickie.m in Sources */,
+				2C2299501F44BA8800E7CD85 /* UIViewController+ErrorAndLoading.m in Sources */,
+				2C2299461F447C3500E7CD85 /* FrameUtils.m in Sources */,
+				2C5B16A51F3E06A100E1D32B /* BDAddBeerLogViewController.m in Sources */,
+				2C5B169F1F3E060600E1D32B /* LUAutocompleteTableViewCell.swift in Sources */,
+				2C5B16901F3DF9D400E1D32B /* BDBeerLogCell.m in Sources */,
+				2C0EE0E91F423D3F000C6BE8 /* Location+CoreDataProperties.m in Sources */,
+				2C22994D1F44923100E7CD85 /* BDSuggestedBeersLayout.m in Sources */,
+				2C5B169E1F3E060600E1D32B /* LUAutocompleteViewDataSource.swift in Sources */,
+				2C0EE0E81F423D3F000C6BE8 /* Location+CoreDataClass.m in Sources */,
+				2C26491E1F3DEEB50022F5BE /* BeerDiary.xcdatamodeld in Sources */,
+				2C0EE0EF1F423DE0000C6BE8 /* NSManagedObjectContext+Utils.m in Sources */,
+				2C2649381F3DF0540022F5BE /* Brewery+CoreDataClass.m in Sources */,
+				2C0EE0E01F423319000C6BE8 /* BDLocationClient.m in Sources */,
+				2C26493B1F3DF0540022F5BE /* BeerLog+CoreDataProperties.m in Sources */,
+				2C0EE0EE1F423DE0000C6BE8 /* NSManagedObject+CoreData.m in Sources */,
+				2C26493C1F3DF0540022F5BE /* Beer+CoreDataClass.m in Sources */,
+				2C0EE0DD1F4232B0000C6BE8 /* BDClient.m in Sources */,
+				2C2649181F3DEEB50022F5BE /* ViewController.m in Sources */,
+				2C5B16A11F3E060600E1D32B /* LUAutocompleteViewDelegate.swift in Sources */,
+				2C2299491F44865000E7CD85 /* BDBeerSuggestionCell.m in Sources */,
+				2C2649261F3DEEB50022F5BE /* main.m in Sources */,
+				2C2649391F3DF0540022F5BE /* Brewery+CoreDataProperties.m in Sources */,
+				2C26493D1F3DF0540022F5BE /* Beer+CoreDataProperties.m in Sources */,
+				2C5B16A01F3E060600E1D32B /* LUAutocompleteView.swift in Sources */,
+				2C2649151F3DEEB50022F5BE /* AppDelegate.m in Sources */,
+				2C2649421F3DF1220022F5BE /* BDRecentBeersViewController.m in Sources */,
+				2C26493A1F3DF0540022F5BE /* BeerLog+CoreDataClass.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2C2649191F3DEEB50022F5BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C26491A1F3DEEB50022F5BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2C2649211F3DEEB50022F5BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C2649221F3DEEB50022F5BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C2649271F3DEEB50022F5BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2C2649281F3DEEB50022F5BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2C26492A1F3DEEB50022F5BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E065A342296CE5953C019C4B /* Pods-BeerDiary.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 7QB7R3A88P;
+				INFOPLIST_FILE = BeerDiary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lindauer.BeerDiary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeerDiary/BeerDiary-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C26492B1F3DEEB50022F5BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6505CE224BA0519D4C66E36 /* Pods-BeerDiary.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 7QB7R3A88P;
+				INFOPLIST_FILE = BeerDiary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lindauer.BeerDiary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BeerDiary/BeerDiary-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C26490B1F3DEEB50022F5BE /* Build configuration list for PBXProject "BeerDiary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C2649271F3DEEB50022F5BE /* Debug */,
+				2C2649281F3DEEB50022F5BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C2649291F3DEEB50022F5BE /* Build configuration list for PBXNativeTarget "BeerDiary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C26492A1F3DEEB50022F5BE /* Debug */,
+				2C26492B1F3DEEB50022F5BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2C26491C1F3DEEB50022F5BE /* BeerDiary.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2C0EE0E31F423C9A000C6BE8 /* BeerDiary 2.xcdatamodel */,
+				2C26491D1F3DEEB50022F5BE /* BeerDiary.xcdatamodel */,
+			);
+			currentVersion = 2C0EE0E31F423C9A000C6BE8 /* BeerDiary 2.xcdatamodel */;
+			path = BeerDiary.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2C2649081F3DEEB50022F5BE /* Project object */;
+}

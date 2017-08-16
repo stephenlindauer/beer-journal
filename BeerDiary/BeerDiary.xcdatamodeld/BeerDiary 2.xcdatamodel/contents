@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13221.4" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Beer" representedClassName="Beer" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="brewery" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Brewery" inverseName="beers" inverseEntity="Brewery" syncable="YES"/>
+        <relationship name="logs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BeerLog" inverseName="beer" inverseEntity="BeerLog" syncable="YES"/>
+    </entity>
+    <entity name="BeerLog" representedClassName="BeerLog" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="locationLatitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="locationLongitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="beer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Beer" inverseName="logs" inverseEntity="Beer" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="beers" inverseEntity="Location" syncable="YES"/>
+    </entity>
+    <entity name="Brewery" representedClassName="Brewery" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="beers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Beer" inverseName="brewery" inverseEntity="Beer" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="beers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BeerLog" inverseName="location" inverseEntity="BeerLog" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Beer" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="BeerLog" positionX="-36" positionY="27" width="128" height="135"/>
+        <element name="Brewery" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Location" positionX="-45" positionY="63" width="128" height="105"/>
+    </elements>
+</model>
