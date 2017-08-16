@@ -13,27 +13,26 @@
         <scene sceneID="OQz-vV-eXY">
             <objects>
                 <tableViewController id="Sjq-4S-pei" customClass="BDRecentBeersViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="B3b-QW-Qgk">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="B3b-QW-Qgk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeerCell" rowHeight="65" id="ksH-hW-pit" customClass="BDBeerLogCell">
-                                <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeerCell" id="ksH-hW-pit" customClass="BDBeerLogCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ksH-hW-pit" id="evr-mK-695">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unfiltered Wheat Beer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9a-QU-OUV">
-                                            <rect key="frame" x="17" y="8" width="210" height="26.5"/>
+                                            <rect key="frame" x="17" y="4" width="210" height="26.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Boulevard Brewing Co" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcH-He-wSu">
-                                            <rect key="frame" x="17" y="34" width="170" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boulevard Brewing Co" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcH-He-wSu">
+                                            <rect key="frame" x="17" y="28.5" width="125" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -44,10 +43,21 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Our Apartment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdG-Ub-Plq">
+                                            <rect key="frame" x="271.5" y="28.5" width="95.5" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="qdG-Ub-Plq" firstAttribute="trailing" secondItem="xLm-GG-vPa" secondAttribute="trailing" id="3aI-fx-vKc"/>
                                         <constraint firstAttribute="trailing" secondItem="xLm-GG-vPa" secondAttribute="trailing" constant="8" id="C6h-xD-FrT"/>
-                                        <constraint firstItem="e9a-QU-OUV" firstAttribute="top" secondItem="evr-mK-695" secondAttribute="top" constant="8" id="LCj-yP-2EE"/>
+                                        <constraint firstItem="qdG-Ub-Plq" firstAttribute="centerY" secondItem="TcH-He-wSu" secondAttribute="centerY" id="Jtu-wa-cQp"/>
+                                        <constraint firstItem="qdG-Ub-Plq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TcH-He-wSu" secondAttribute="trailing" constant="10" id="KdA-14-mkK"/>
+                                        <constraint firstItem="e9a-QU-OUV" firstAttribute="top" secondItem="evr-mK-695" secondAttribute="top" constant="4" id="LCj-yP-2EE"/>
+                                        <constraint firstItem="TcH-He-wSu" firstAttribute="top" secondItem="e9a-QU-OUV" secondAttribute="bottom" constant="-2" id="NB3-f2-xij"/>
+                                        <constraint firstItem="TcH-He-wSu" firstAttribute="leading" secondItem="e9a-QU-OUV" secondAttribute="leading" id="Ofg-Ki-iWE"/>
                                         <constraint firstItem="e9a-QU-OUV" firstAttribute="leading" secondItem="evr-mK-695" secondAttribute="leading" constant="17" id="Scr-hc-5El"/>
                                         <constraint firstItem="xLm-GG-vPa" firstAttribute="top" secondItem="evr-mK-695" secondAttribute="top" constant="8" id="xye-hK-Eq8"/>
                                     </constraints>
@@ -56,6 +66,7 @@
                                     <outlet property="beerNameLabel" destination="e9a-QU-OUV" id="eIu-hn-lU0"/>
                                     <outlet property="breweryNameLabel" destination="TcH-He-wSu" id="IeH-vt-p4z"/>
                                     <outlet property="dateLabel" destination="xLm-GG-vPa" id="Zcs-hy-Bgz"/>
+                                    <outlet property="locationLabel" destination="qdG-Ub-Plq" id="QnW-kL-6vN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -167,6 +178,19 @@
                                     <action selector="changeDate:" destination="smS-Ik-HtZ" eventType="touchUpInside" id="fDz-pY-zyd"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZg-19-wIG">
+                                <rect key="frame" x="195" y="318" width="86" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ahc-Em-Wtv"/>
+                                    <constraint firstAttribute="width" constant="86" id="eeS-W1-oGg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelSetDate:" destination="smS-Ik-HtZ" eventType="touchUpInside" id="ejq-bw-klv"/>
+                                    <action selector="changeDate:" destination="smS-Ik-HtZ" eventType="touchUpInside" id="Qaa-DT-4vV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96286274705614361" green="0.81843333499772208" blue="0.67400392293930045" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -177,6 +201,7 @@
                             <constraint firstItem="MHQ-Pb-Jdz" firstAttribute="leading" secondItem="79t-9L-PY6" secondAttribute="leading" constant="25" id="6iL-6L-vUm"/>
                             <constraint firstItem="BxJ-ne-QwI" firstAttribute="leading" secondItem="HBT-wD-Ax2" secondAttribute="leading" id="76j-Gh-GiQ"/>
                             <constraint firstItem="NyR-3u-XPI" firstAttribute="width" secondItem="sQh-sq-81C" secondAttribute="width" id="7t4-J2-q4X"/>
+                            <constraint firstItem="NZg-19-wIG" firstAttribute="centerY" secondItem="uy1-r0-tpH" secondAttribute="centerY" id="LDA-o3-d9u"/>
                             <constraint firstItem="MHQ-Pb-Jdz" firstAttribute="top" secondItem="79t-9L-PY6" secondAttribute="top" constant="40" id="Qdc-7C-21g"/>
                             <constraint firstItem="MHQ-Pb-Jdz" firstAttribute="width" secondItem="sQh-sq-81C" secondAttribute="width" id="RYM-D3-27a"/>
                             <constraint firstItem="Eaw-18-eHy" firstAttribute="top" secondItem="NyR-3u-XPI" secondAttribute="bottom" constant="20" id="UFd-lM-Uca"/>
@@ -192,6 +217,7 @@
                             <constraint firstItem="HBT-wD-Ax2" firstAttribute="leading" secondItem="MHQ-Pb-Jdz" secondAttribute="leading" constant="-20" id="k1a-TA-bYw"/>
                             <constraint firstItem="sQh-sq-81C" firstAttribute="top" secondItem="MHQ-Pb-Jdz" secondAttribute="bottom" constant="10" id="oL6-6F-TPY"/>
                             <constraint firstItem="79t-9L-PY6" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3Zq-Db-AX5" secondAttribute="trailing" constant="5" id="rBh-fP-yDU"/>
+                            <constraint firstItem="uy1-r0-tpH" firstAttribute="leading" secondItem="NZg-19-wIG" secondAttribute="trailing" constant="8" id="uYw-5Y-XH5"/>
                             <constraint firstItem="NyR-3u-XPI" firstAttribute="top" secondItem="0Z8-Ya-Drw" secondAttribute="bottom" constant="5" id="vpn-EM-gpR"/>
                             <constraint firstItem="uy1-r0-tpH" firstAttribute="centerY" secondItem="Eaw-18-eHy" secondAttribute="centerY" id="wTv-hF-Bf0"/>
                             <constraint firstItem="kmD-KA-WgA" firstAttribute="top" secondItem="Eaw-18-eHy" secondAttribute="bottom" constant="5" id="xFx-Fy-9pw"/>
@@ -202,6 +228,8 @@
                     <connections>
                         <outlet property="beerTextField" destination="MHQ-Pb-Jdz" id="DWt-IS-N0F"/>
                         <outlet property="breweryTextField" destination="sQh-sq-81C" id="Z1s-Fo-bs3"/>
+                        <outlet property="cancelDateButton" destination="NZg-19-wIG" id="SpS-2P-lKK"/>
+                        <outlet property="changeDateButton" destination="uy1-r0-tpH" id="p6G-T7-Jof"/>
                         <outlet property="dateLabel" destination="kmD-KA-WgA" id="CYZ-ej-afv"/>
                         <outlet property="locationLabel" destination="3Zq-Db-AX5" id="9jW-ci-at9"/>
                         <outlet property="ratingSlider" destination="NyR-3u-XPI" id="TNg-n5-tnm"/>

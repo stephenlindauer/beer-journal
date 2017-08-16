@@ -15,8 +15,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UISlider *ratingSlider;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIButton *changeDateButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelDateButton;
 
 - (IBAction)changeLocation:(id)sender;
+- (IBAction)cancelSetDate:(id)sender;
 - (IBAction)changeDate:(id)sender;
 - (IBAction)roundSliderToValue:(id)sender;
 

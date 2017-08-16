@@ -25,13 +25,15 @@
 
 
 
-@interface BDAddBeerLogViewController () <CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate, BDSetLocationDelegate>
+@interface BDAddBeerLogViewController () <CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate, BDSetLocationDelegate, UIPickerViewDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) Location *suggestedLocation;
 @property (nonatomic, strong) UICollectionView *suggestionsCollectionsView;
 @property (nonatomic, strong) NSArray <Beer *> *beers;
 @property (nonatomic, strong) NSArray <Location *> *locations;
+@property (nonatomic, strong) UIDatePicker *datePicker;
+@property (nonatomic, strong) NSDate *date;
 
 
 @end
@@ -58,6 +60,9 @@
     self.beerTextField.inputAccessoryView = self.suggestionsCollectionsView;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(saveBeerLog)];
+    
+    self.datePicker = [UIDatePicker new];
+    self.datePicker.datePickerMode = UIDatePickerModeDateAndTime;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -96,18 +101,37 @@
     
     log.beer = beer;
     log.location = self.suggestedLocation;
-    log.date = [NSDate date];
+    log.date = self.date ?: [NSDate date];
+    log.rating = self.ratingSlider.value;
     [log saveManagedObjectContext];
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)changeLocation:(id)sender {
-    
-}
 
 - (IBAction)changeDate:(id)sender {
+    // Show date picker
+    if (self.cancelDateButton.hidden) {
+        [self.view addSubview:self.datePicker];
+        self.datePicker.frame = CGRectMake(0, self.view.bounds.size.height - 216, self.view.bounds.size.width, 216.0);
+        
+        [self.changeDateButton setTitle:@"Set" forState:UIControlStateNormal];
+        self.cancelDateButton.hidden = NO;
+    }
+    // Set date and hide picker
+    else {
+        self.date = self.datePicker.date;
+        [self cancelSetDate:nil];
+    }
+}
+
+- (IBAction)cancelSetDate:(id)sender {
+    [self.changeDateButton setTitle:@"Change" forState:UIControlStateNormal];
+    self.cancelDateButton.hidden = YES;
     
+    [self.datePicker setDate:self.date];
+    
+    [self.datePicker removeFromSuperview];
 }
 
 - (IBAction)roundSliderToValue:(id)sender {

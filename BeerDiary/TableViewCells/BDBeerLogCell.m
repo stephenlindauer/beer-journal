@@ -11,6 +11,7 @@
 #import "BeerLog+CoreDataClass.h"
 #import "Beer+CoreDataClass.h"
 #import "Brewery+CoreDataClass.h"
+#import "Location+CoreDataClass.h"
 #import "NSDate+Helper.h"
 
 
@@ -33,6 +34,7 @@
     self.beerNameLabel.text = log.beer.name;
     self.breweryNameLabel.text = log.beer.brewery.name;
     self.dateLabel.text = [log.date stringDaysAgo];
+    self.locationLabel.text = log.location.name;
 }
 
 @end
