@@ -45,6 +45,8 @@
 		2C8ACD3D1F44ED83003FAABC /* BDLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8ACD3C1F44ED83003FAABC /* BDLocationCell.m */; };
 		2C8ACD401F44F653003FAABC /* BDGenericTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8ACD3F1F44F653003FAABC /* BDGenericTextCell.m */; };
 		2CD684D61F46043400AC1697 /* BDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD684D51F46043400AC1697 /* BDNavigationController.m */; };
+		2CD684D91F46087500AC1697 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD684D81F46087500AC1697 /* CloudKit.framework */; };
+		2CD684DC1F46103400AC1697 /* BDBeerSuggestionAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD684DB1F46103400AC1697 /* BDBeerSuggestionAccessoryView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +120,10 @@
 		2C8ACD411F45092D003FAABC /* BeerDiary 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BeerDiary 3.xcdatamodel"; sourceTree = "<group>"; };
 		2CD684D41F46043400AC1697 /* BDNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDNavigationController.h; sourceTree = "<group>"; };
 		2CD684D51F46043400AC1697 /* BDNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDNavigationController.m; sourceTree = "<group>"; };
+		2CD684D71F46075400AC1697 /* BeerDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeerDiary.entitlements; sourceTree = "<group>"; };
+		2CD684D81F46087500AC1697 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		2CD684DA1F46103400AC1697 /* BDBeerSuggestionAccessoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDBeerSuggestionAccessoryView.h; sourceTree = "<group>"; };
+		2CD684DB1F46103400AC1697 /* BDBeerSuggestionAccessoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDBeerSuggestionAccessoryView.m; sourceTree = "<group>"; };
 		D7AA1C856AF2142CD2D523F0 /* Pods_BeerDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E065A342296CE5953C019C4B /* Pods-BeerDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeerDiary/Pods-BeerDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		F6505CE224BA0519D4C66E36 /* Pods-BeerDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerDiary/Pods-BeerDiary.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CD684D91F46087500AC1697 /* CloudKit.framework in Frameworks */,
 				2C0EE0E21F423720000C6BE8 /* CoreLocation.framework in Frameworks */,
 				19E131441BE4DCB45ECAF5FF /* Pods_BeerDiary.framework in Frameworks */,
 			);
@@ -166,6 +173,7 @@
 		2C2649121F3DEEB50022F5BE /* BeerDiary */ = {
 			isa = PBXGroup;
 			children = (
+				2CD684D71F46075400AC1697 /* BeerDiary.entitlements */,
 				2C0EE0EA1F423DDE000C6BE8 /* NSManagedObject+CoreData.h */,
 				2C0EE0EB1F423DDE000C6BE8 /* NSManagedObject+CoreData.m */,
 				2C0EE0ED1F423DDF000C6BE8 /* NSManagedObjectContext+Utils.h */,
@@ -195,6 +203,8 @@
 				2C2299481F44865000E7CD85 /* BDBeerSuggestionCell.m */,
 				2CD684D41F46043400AC1697 /* BDNavigationController.h */,
 				2CD684D51F46043400AC1697 /* BDNavigationController.m */,
+				2CD684DA1F46103400AC1697 /* BDBeerSuggestionAccessoryView.h */,
+				2CD684DB1F46103400AC1697 /* BDBeerSuggestionAccessoryView.m */,
 			);
 			path = BeerDiary;
 			sourceTree = "<group>";
@@ -279,6 +289,7 @@
 		7B9759F1D6E555C75B63DE0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CD684D81F46087500AC1697 /* CloudKit.framework */,
 				2C0EE0E11F423720000C6BE8 /* CoreLocation.framework */,
 				D7AA1C856AF2142CD2D523F0 /* Pods_BeerDiary.framework */,
 			);
@@ -329,6 +340,14 @@
 					2C26490F1F3DEEB50022F5BE = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -429,6 +448,7 @@
 				2C2299501F44BA8800E7CD85 /* UIViewController+ErrorAndLoading.m in Sources */,
 				2C2299461F447C3500E7CD85 /* FrameUtils.m in Sources */,
 				2C5B16A51F3E06A100E1D32B /* BDAddBeerLogViewController.m in Sources */,
+				2CD684DC1F46103400AC1697 /* BDBeerSuggestionAccessoryView.m in Sources */,
 				2C5B169F1F3E060600E1D32B /* LUAutocompleteTableViewCell.swift in Sources */,
 				2C5B16901F3DF9D400E1D32B /* BDBeerLogCell.m in Sources */,
 				2C0EE0E91F423D3F000C6BE8 /* Location+CoreDataProperties.m in Sources */,
@@ -592,10 +612,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BeerDiary/BeerDiary.entitlements;
 				DEVELOPMENT_TEAM = 7QB7R3A88P;
 				INFOPLIST_FILE = BeerDiary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lindauer.BeerDiary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comocoding.beerjournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BeerDiary/BeerDiary-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -610,10 +631,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BeerDiary/BeerDiary.entitlements;
 				DEVELOPMENT_TEAM = 7QB7R3A88P;
 				INFOPLIST_FILE = BeerDiary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lindauer.BeerDiary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comocoding.beerjournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BeerDiary/BeerDiary-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

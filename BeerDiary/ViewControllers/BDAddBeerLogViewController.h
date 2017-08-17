@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *changeDateButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelDateButton;
 
-- (IBAction)changeLocation:(id)sender;
 - (IBAction)cancelSetDate:(id)sender;
 - (IBAction)changeDate:(id)sender;
 - (IBAction)roundSliderToValue:(id)sender;

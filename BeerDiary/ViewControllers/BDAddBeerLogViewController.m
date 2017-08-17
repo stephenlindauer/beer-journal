@@ -23,15 +23,14 @@
 #import "NSManagedObjectContext+Utils.h"
 #import "BDSetLocationViewController.h"
 #import "NSDate+Helper.h"
+#import "BDBeerSuggestionAccessoryView.h"
 
 
-
-@interface BDAddBeerLogViewController () <CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate, BDSetLocationDelegate, UIPickerViewDelegate>
+@interface BDAddBeerLogViewController () <CLLocationManagerDelegate, UICollectionViewDelegateFlowLayout, UITextFieldDelegate, BDSetLocationDelegate, UIPickerViewDelegate, BDBeerSuggestionDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) Location *suggestedLocation;
-@property (nonatomic, strong) UICollectionView *suggestionsCollectionsView;
-@property (nonatomic, strong) NSArray <Beer *> *beers;
+@property (nonatomic, strong) BDBeerSuggestionAccessoryView *suggestionView;
 @property (nonatomic, strong) NSArray <Location *> *locations;
 @property (nonatomic, strong) UIDatePicker *datePicker;
 @property (nonatomic, strong) NSDate *date;
@@ -50,15 +49,9 @@
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startUpdatingLocation];
     
-    // Setup auto suggest beers
-    BDSuggestedBeersLayout *layout = [BDSuggestedBeersLayout new];
-    
-    self.suggestionsCollectionsView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 54) collectionViewLayout:layout];
-    self.suggestionsCollectionsView.delegate = self;
-    self.suggestionsCollectionsView.dataSource = self;
-    self.suggestionsCollectionsView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
-    [self.suggestionsCollectionsView registerClass:[BDBeerSuggestionCell class] forCellWithReuseIdentifier:@"BeerSuggestionCell"];
-    self.beerTextField.inputAccessoryView = self.suggestionsCollectionsView;
+    self.suggestionView = [[BDBeerSuggestionAccessoryView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 54)];
+    self.suggestionView.delegate = self;
+    self.beerTextField.inputAccessoryView = self.suggestionView;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(saveBeerLog)];
     
@@ -166,51 +159,20 @@
             });
         }
         else {
-            self.locationLabel.text = @"No locations found";
+            NSLog(@"Error: No locations found");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.locationLabel.text = @"No locations found";
+            });
         }
     } failure:^(NSError *error) {
-        self.locationLabel.text = @"Error fetching locations";
+        NSLog(@"Error: %@", error.localizedDescription);
+        NSLog(@"Details: %@", error.userInfo);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.locationLabel.text = @"Error fetching locations";
+        });
     }];
 }
 
-#pragma mark - Collection view
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return self.beers.count;
-}
-
-- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    BDBeerSuggestionCell *cell = (BDBeerSuggestionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"BeerSuggestionCell" forIndexPath:indexPath];
-
-    cell.beer = self.beers[indexPath.row];
-    NSLog(@"cell: %@", cell);
-    cell.hidden = NO;
-    
-    return cell;
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    // TODO: Dynamic text size
-    return CGSizeMake(160, 54);
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    Beer *beer = self.beers[indexPath.row];
-    
-    self.beerTextField.text = beer.name;
-    self.breweryTextField.text = beer.brewery.name;
-    
-    [self.beerTextField resignFirstResponder];
-}
 
 
 
@@ -225,13 +187,6 @@
     [self fetchLocationsFrom:location];
 }
 
-#pragma mark - Suggestions
-
-- (void)updateBeerSuggestions
-{
-    self.beers = [Beer findAllWithPredicate:[NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", self.beerTextField.text]];
-    [self.suggestionsCollectionsView reloadSections:[NSIndexSet indexSetWithIndex:0]];
-}
 
 
 #pragma mark - Text Field delegate
@@ -246,12 +201,27 @@
     return YES;
 }
 
+- (void)updateBeerSuggestions
+{
+    [self.suggestionView updateBeerSuggestionsWithText:self.beerTextField.text];
+}
+
 #pragma mark - Set Location delegate
 
 - (void)locationChangedTo:(Location *)location
 {
     self.locationLabel.text = location.name;
     self.suggestedLocation = location;
+}
+
+#pragma mark - Beer suggestion accessory delegate
+
+- (void)beerSuggestionWasSelected:(Beer *)beer
+{
+    self.beerTextField.text = beer.name;
+    self.breweryTextField.text = beer.brewery.name;
+    
+    [self.beerTextField resignFirstResponder];
 }
 
 @end
