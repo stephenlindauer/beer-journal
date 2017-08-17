@@ -18,8 +18,11 @@
     // Setup labels on first time config
     if (self.beerNameLabel == nil) {
         
-        self.beerNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 300, 25)];
-        self.breweryNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 26, 300, 20)];
+        self.layer.cornerRadius = 4;
+        self.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+        
+        self.beerNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 300, 25)];
+        self.breweryNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 21, 300, 20)];
         
         self.beerNameLabel.font = [UIFont systemFontOfSize:16];
         self.breweryNameLabel.font = [UIFont systemFontOfSize:12];

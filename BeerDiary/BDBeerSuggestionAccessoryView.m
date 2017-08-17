@@ -11,6 +11,7 @@
 #import "BDBeerSuggestionCell.h"
 #import "Beer+CoreDataClass.h"
 #import "Brewery+CoreDataClass.h"
+#import "BeerLog+CoreDataClass.h"
 #import "NSManagedObject+CoreData.h"
 
 
@@ -26,25 +27,48 @@
 {
     self = [super initWithFrame:frame];
     
-    
     BDSuggestedBeersLayout *layout = [BDSuggestedBeersLayout new];
+    self.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
     
-    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height) collectionViewLayout:layout];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 4, frame.size.width, frame.size.height-8) collectionViewLayout:layout];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    self.collectionView.showsHorizontalScrollIndicator = NO;
+    self.collectionView.contentInset = UIEdgeInsetsMake(0, 5, 0, 5);
     [self.collectionView registerClass:[BDBeerSuggestionCell class] forCellWithReuseIdentifier:@"BeerSuggestionCell"];
     
     [self addSubview:self.collectionView];
+
+    [self showRecentlyUsedBeers];
     
     return self;
 }
 
+- (void)showRecentlyUsedBeers
+{
+    NSArray <BeerLog *> *recentLogs = [BeerLog findAllSortedBy:@"date" ascending:NO];
+    NSMutableArray *beers = [[NSMutableArray alloc] initWithCapacity:10];
+    for (int i=0; i<MIN(10, recentLogs.count); i++) {
+        if (![beers containsObject:recentLogs[i].beer]) {
+            [beers addObject:recentLogs[i].beer];
+        }
+    }
+    self.beers = beers;
+}
 
 - (void)updateBeerSuggestionsWithText:(NSString *)search
 {
-    self.beers = [Beer findAllWithPredicate:[NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", search]];
-    [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+    // No search string, show recently used
+    if (search.length == 0) {
+        [self showRecentlyUsedBeers];
+    }
+    // Search
+    else {
+        self.beers = [Beer findAllWithPredicate:[NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", search]];
+    }
+    
+   [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
 }
 
 
@@ -80,7 +104,7 @@
     CGRect brewerySize = [beer.brewery.name boundingRectWithSize:CGSizeMake(400, 20) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
     
     
-    return CGSizeMake(MAX(beerSize.size.width, brewerySize.size.width) + 10, 54);
+    return CGSizeMake(MAX(beerSize.size.width, brewerySize.size.width) + 10, self.collectionView.frame.size.height);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath

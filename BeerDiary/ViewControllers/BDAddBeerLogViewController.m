@@ -49,7 +49,7 @@
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startUpdatingLocation];
     
-    self.suggestionView = [[BDBeerSuggestionAccessoryView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 54)];
+    self.suggestionView = [[BDBeerSuggestionAccessoryView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 50)];
     self.suggestionView.delegate = self;
     self.beerTextField.inputAccessoryView = self.suggestionView;
     
