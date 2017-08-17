@@ -10,6 +10,7 @@
 #import "BDSuggestedBeersLayout.h"
 #import "BDBeerSuggestionCell.h"
 #import "Beer+CoreDataClass.h"
+#import "Brewery+CoreDataClass.h"
 #import "NSManagedObject+CoreData.h"
 
 
@@ -71,7 +72,15 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     // TODO: Dynamic text size
-    return CGSizeMake(160, 54);
+    Beer *beer = self.beers[indexPath.row];
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:16]};
+    CGRect beerSize = [beer.name boundingRectWithSize:CGSizeMake(400, 20) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
+    attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:12]};
+    CGRect brewerySize = [beer.brewery.name boundingRectWithSize:CGSizeMake(400, 20) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
+    
+    
+    return CGSizeMake(MAX(beerSize.size.width, brewerySize.size.width) + 10, 54);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
