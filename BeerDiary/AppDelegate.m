@@ -11,7 +11,7 @@
 #import "Beer+CoreDataClass.h"
 #import "NSManagedObject+CoreData.h"
 #import "NSManagedObjectContext+Utils.h"
-
+#import "Location+CoreDataClass.h"
 
 @interface AppDelegate ()
 
@@ -47,6 +47,12 @@
 //
 //    [kona saveManagedObjectContext];
     
+//    Location *l = [Location findFirstByAttribute:@"name" withValue:@"Our Apartment"];
+//    l.isCustomUserLocation = YES;
+//    [l saveManagedObjectContext];
+//    NSLog(@"L: %@", l);
+  
+    [self setupAppTheme];
     
     
     NSLog(@"beers: %@", [Beer findAll]);
@@ -54,6 +60,21 @@
     return YES;
 }
 
+
+- (void)setupAppTheme
+{
+    UIColor *brown = [UIColor colorWithRed:(0x93 / 255.0) green:(0x65 / 255.0) blue:(0x03 / 255.0) alpha:1.0];
+    
+    [[UINavigationBar appearance] setBarTintColor:brown];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [[UINavigationBar appearance] setTranslucent:YES];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
+    
+    [[UITabBar appearance] setTintColor:brown];
+    
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

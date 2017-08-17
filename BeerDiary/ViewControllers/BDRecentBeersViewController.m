@@ -27,7 +27,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.recentBeers = [BeerLog findAll];
+    self.recentBeers = [BeerLog findAllSortedBy:@"date" ascending:NO];
     
     [self.tableView reloadData];
 }
@@ -58,25 +58,27 @@
 }
 
 
-/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        
+        BeerLog *log = self.recentBeers[indexPath.row];
+        
+        NSMutableArray *tmpBeerLogs = [self.recentBeers mutableCopy];
+        [tmpBeerLogs removeObject:log];
+        self.recentBeers = tmpBeerLogs;
+        [log deleteEntity];
+        [log saveManagedObjectContext];
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
-*/
 
 /*
 // Override to support rearranging the table view.

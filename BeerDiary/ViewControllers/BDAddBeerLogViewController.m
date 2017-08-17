@@ -22,6 +22,7 @@
 #import "BDSuggestedBeersLayout.h"
 #import "NSManagedObjectContext+Utils.h"
 #import "BDSetLocationViewController.h"
+#import "NSDate+Helper.h"
 
 
 
@@ -112,6 +113,8 @@
 - (IBAction)changeDate:(id)sender {
     // Show date picker
     if (self.cancelDateButton.hidden) {
+        [self.view endEditing:YES];
+        
         [self.view addSubview:self.datePicker];
         self.datePicker.frame = CGRectMake(0, self.view.bounds.size.height - 216, self.view.bounds.size.width, 216.0);
         
@@ -122,6 +125,7 @@
     else {
         self.date = self.datePicker.date;
         [self cancelSetDate:nil];
+        self.dateLabel.text = [self.date stringWithFormat:@"MMM d, yyyy h:mm a"];
     }
 }
 
@@ -135,7 +139,6 @@
 }
 
 - (IBAction)roundSliderToValue:(id)sender {
-    NSLog(@"roundSliderToValue");
     self.ratingSlider.value = (int)(self.ratingSlider.value + 0.5);
 }
 
@@ -143,11 +146,23 @@
 {
     [[BDLocationClient new] getLocationsFrom:location success:^(NSArray *locations) {
         if (locations.count > 0) {
+            
+            NSArray *allValidLocations = [locations arrayByAddingObjectsFromArray:[Location findAllWithPredicate:[NSPredicate predicateWithFormat:@"isCustomUserLocation = YES"]]];
+            
+            allValidLocations = [allValidLocations sortedArrayUsingComparator:^NSComparisonResult(Location * _Nonnull obj1, Location * _Nonnull obj2) {
+                
+                
+                CGFloat d1 = [self.locationManager.location distanceFromLocation:[[CLLocation alloc] initWithLatitude:obj1.latitude longitude:obj1.longitude]];
+                CGFloat d2 = [self.locationManager.location distanceFromLocation:[[CLLocation alloc] initWithLatitude:obj2.latitude longitude:obj2.longitude]];
+                
+                return d1 > d2;
+            }];
+            
             dispatch_async(dispatch_get_main_queue(), ^{
-                Location *suggestedLocation = locations[0];
+                Location *suggestedLocation = allValidLocations[0];
                 self.locationLabel.text = suggestedLocation.name;
                 self.suggestedLocation = suggestedLocation;
-                self.locations = locations;
+                self.locations = allValidLocations;
             });
         }
         else {

@@ -27,7 +27,7 @@
 {
     AFHTTPSessionManager *manager = [self sessionManager];
     
-    NSString *url = [NSString stringWithFormat:@"https://api.yelp.com/v3/businesses/search?latitude=%f&longitude=%f", location.coordinate.latitude, location.coordinate.longitude];
+    NSString *url = [NSString stringWithFormat:@"https://api.yelp.com/v3/businesses/search?latitude=%f&longitude=%f&limit=50&sort_by=distance", location.coordinate.latitude, location.coordinate.longitude];
     
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         

@@ -99,6 +99,7 @@
         location.name = self.searchBar.text;
         location.latitude = self.lastLocation.coordinate.latitude;
         location.longitude = self.lastLocation.coordinate.longitude;
+        location.isCustomUserLocation = YES;
         
         [self.delegate locationChangedTo:location];
     }
