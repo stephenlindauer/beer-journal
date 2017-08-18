@@ -12,7 +12,7 @@
 #import "NSManagedObjectContext+Utils.h"
 #import "NSManagedObject+CoreData.h"
 
-@interface BDDashboardViewController ()
+@interface BDDashboardViewController () <BDRecentBeerCellDelegate>
 
 @property (nonatomic, strong) NSArray <BeerLog *> *recentBeers;
 
@@ -46,7 +46,6 @@ static NSString * const reuseIdentifier = @"RecentBeerCell";
     [self.collectionView reloadData];
 }
 
-
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -62,6 +61,7 @@ static NSString * const reuseIdentifier = @"RecentBeerCell";
     BDRecentBeerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     cell.log = self.recentBeers[indexPath.row];
+    cell.delegate = self;
     
     return cell;
 }
@@ -96,5 +96,31 @@ static NSString * const reuseIdentifier = @"RecentBeerCell";
 	
 }
 */
+
+#pragma mark - Recent Beer Cell delegate
+
+- (void)beerLogWasDeleted:(BeerLog *)log
+{
+    [log deleteEntity];
+    
+    for (int i=0; i<self.recentBeers.count; i++) {
+        if (self.recentBeers[i] == log) {
+            
+            NSMutableArray *mutableBeers = [self.recentBeers mutableCopy];
+            [mutableBeers removeObjectAtIndex:i];
+            
+            [self.collectionView performBatchUpdates:^{
+                self.recentBeers = mutableBeers;
+                
+                [self.collectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:i inSection:0]]];
+            } completion:^(BOOL finished) {
+                
+            }];
+            
+        }
+    }
+    
+    [log saveManagedObjectContext];
+}
 
 @end

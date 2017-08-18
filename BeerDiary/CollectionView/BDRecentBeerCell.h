@@ -10,6 +10,12 @@
 
 @class BeerLog;
 
+@protocol BDRecentBeerCellDelegate
+
+- (void)beerLogWasDeleted:(BeerLog *)log;
+@end
+
+
 @interface BDRecentBeerCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *beerNameLabel;
@@ -19,6 +25,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *beerImageView;
 
 @property (nonatomic, weak) BeerLog *log;
+@property (nonatomic, weak) id<BDRecentBeerCellDelegate> delegate;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *optionsContainerViewConstraint;
+
+- (IBAction)confirmDelete:(id)sender;
+- (IBAction)dismissOptions:(id)sender;
 
 
 @end

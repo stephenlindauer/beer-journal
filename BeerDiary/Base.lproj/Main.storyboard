@@ -162,20 +162,63 @@
                                             <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.5" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhE-yz-QUm" userLabel="Menu Container View">
+                                            <rect key="frame" x="0.0" y="250" width="180" height="250"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNf-lR-Txt">
+                                                    <rect key="frame" x="20" y="136" width="140" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <state key="normal" title="Cancel">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="dismissOptions:" destination="4yK-MX-4qT" eventType="touchUpInside" id="ygP-Mx-vLB"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ho1-nR-nmE">
+                                                    <rect key="frame" x="20" y="72" width="140" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="140" id="Q2a-m8-QRR"/>
+                                                        <constraint firstAttribute="height" constant="40" id="WVr-IM-1UI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <state key="normal" title="Delete">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="confirmDelete:" destination="4yK-MX-4qT" eventType="touchUpInside" id="rHJ-M4-W9r"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.6837634677919906" green="0.69096097797927469" blue="0.69096097797927469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="ho1-nR-nmE" firstAttribute="centerX" secondItem="hhE-yz-QUm" secondAttribute="centerX" id="AwN-cw-c0y"/>
+                                                <constraint firstItem="XNf-lR-Txt" firstAttribute="top" secondItem="ho1-nR-nmE" secondAttribute="bottom" constant="24" id="BA2-Wh-sQG"/>
+                                                <constraint firstItem="XNf-lR-Txt" firstAttribute="width" secondItem="ho1-nR-nmE" secondAttribute="width" id="M1c-Xn-ISR"/>
+                                                <constraint firstItem="ho1-nR-nmE" firstAttribute="top" secondItem="hhE-yz-QUm" secondAttribute="top" constant="72" id="Mw4-82-HFt"/>
+                                                <constraint firstItem="XNf-lR-Txt" firstAttribute="height" secondItem="ho1-nR-nmE" secondAttribute="height" id="wS1-ri-Rzl"/>
+                                                <constraint firstItem="XNf-lR-Txt" firstAttribute="centerX" secondItem="ho1-nR-nmE" secondAttribute="centerX" id="xAO-nF-Zhx"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="QmE-uD-XDC" firstAttribute="leading" secondItem="4yK-MX-4qT" secondAttribute="leading" constant="8" id="0sP-b8-xaR"/>
                                     <constraint firstItem="EsB-0P-obd" firstAttribute="leading" secondItem="4yK-MX-4qT" secondAttribute="leading" id="2kY-ZF-gQU"/>
                                     <constraint firstItem="EsB-0P-obd" firstAttribute="top" secondItem="4yK-MX-4qT" secondAttribute="top" id="3aT-oG-Y5V"/>
                                     <constraint firstItem="Cqs-CA-Wrc" firstAttribute="leading" secondItem="QmE-uD-XDC" secondAttribute="leading" id="4pO-Gp-uIx"/>
+                                    <constraint firstItem="hhE-yz-QUm" firstAttribute="width" secondItem="4yK-MX-4qT" secondAttribute="width" id="Epr-uk-M9R"/>
                                     <constraint firstItem="fRF-Iz-51G" firstAttribute="top" secondItem="Cqs-CA-Wrc" secondAttribute="bottom" constant="2" id="HFY-la-B4R"/>
                                     <constraint firstAttribute="trailing" secondItem="EsB-0P-obd" secondAttribute="trailing" id="KuS-20-gQI"/>
                                     <constraint firstItem="QmE-uD-XDC" firstAttribute="top" secondItem="EsB-0P-obd" secondAttribute="bottom" constant="3" id="LaW-Co-EbC"/>
+                                    <constraint firstItem="hhE-yz-QUm" firstAttribute="centerX" secondItem="4yK-MX-4qT" secondAttribute="centerX" id="MS0-Rj-EyE"/>
                                     <constraint firstItem="Cqs-CA-Wrc" firstAttribute="top" secondItem="QmE-uD-XDC" secondAttribute="bottom" constant="-2" id="Q1H-2E-CvE"/>
                                     <constraint firstItem="1cw-vw-sGi" firstAttribute="top" secondItem="fRF-Iz-51G" secondAttribute="bottom" id="Vz8-34-b62"/>
+                                    <constraint firstItem="hhE-yz-QUm" firstAttribute="height" secondItem="4yK-MX-4qT" secondAttribute="height" id="bq2-wP-Z1T"/>
                                     <constraint firstItem="fRF-Iz-51G" firstAttribute="leading" secondItem="Cqs-CA-Wrc" secondAttribute="leading" id="jxS-Pd-saI"/>
+                                    <constraint firstItem="hhE-yz-QUm" firstAttribute="top" secondItem="4yK-MX-4qT" secondAttribute="top" constant="250" id="rYx-QE-qbi"/>
                                     <constraint firstItem="1cw-vw-sGi" firstAttribute="leading" secondItem="fRF-Iz-51G" secondAttribute="leading" id="wAA-Sw-Gve"/>
                                 </constraints>
                                 <connections>
@@ -184,6 +227,7 @@
                                     <outlet property="breweryNameLabel" destination="Cqs-CA-Wrc" id="IM8-7p-DeX"/>
                                     <outlet property="dateLabel" destination="1cw-vw-sGi" id="2Gj-xE-9ZP"/>
                                     <outlet property="locationLabel" destination="fRF-Iz-51G" id="YTv-Pj-Itf"/>
+                                    <outlet property="optionsContainerViewConstraint" destination="rYx-QE-qbi" id="2zJ-rP-B8a"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
