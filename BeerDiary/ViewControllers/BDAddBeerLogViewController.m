@@ -267,7 +267,7 @@
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     image = [[image cropCenter] resize:CGSizeMake(960, 960)];
-    self.beerImageView.image = [[image cropCenter] resize:CGSizeMake(200, 200)];
+    self.beerImageView.image = [[image cropCenter] resize:CGSizeMake(600, 600)];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 }

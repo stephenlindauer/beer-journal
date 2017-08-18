@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -107,6 +108,101 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGm-cy-DHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="688.79999999999995" y="463.71814092953525"/>
+        </scene>
+        <!--Dashboard View Controller-->
+        <scene sceneID="GRd-xG-Zvc">
+            <objects>
+                <collectionViewController id="35w-GP-aCW" customClass="BDDashboardViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Nby-4V-9H8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cyan="0.0" magenta="0.20000000000000001" yellow="0.59999999999999998" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lls-EF-zWK">
+                            <size key="itemSize" width="180" height="250"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecentBeerCell" id="4yK-MX-4qT" customClass="BDRecentBeerCell">
+                                <rect key="frame" x="97.5" y="20" width="180" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="250"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Golden Ale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmE-uD-XDC">
+                                            <rect key="frame" x="8" y="183" width="79.5" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EsB-0P-obd">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                            <color key="backgroundColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.059363996478873242" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="EsB-0P-obd" secondAttribute="height" multiplier="1:1" id="zzQ-ES-wLp"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kona" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqs-CA-Wrc">
+                                            <rect key="frame" x="8" y="200.5" width="28.5" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Our Apartment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRF-Iz-51G">
+                                            <rect key="frame" x="8" y="217" width="95.5" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.5" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cw-vw-sGi">
+                                            <rect key="frame" x="8" y="231.5" width="35" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.5" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="QmE-uD-XDC" firstAttribute="leading" secondItem="4yK-MX-4qT" secondAttribute="leading" constant="8" id="0sP-b8-xaR"/>
+                                    <constraint firstItem="EsB-0P-obd" firstAttribute="leading" secondItem="4yK-MX-4qT" secondAttribute="leading" id="2kY-ZF-gQU"/>
+                                    <constraint firstItem="EsB-0P-obd" firstAttribute="top" secondItem="4yK-MX-4qT" secondAttribute="top" id="3aT-oG-Y5V"/>
+                                    <constraint firstItem="Cqs-CA-Wrc" firstAttribute="leading" secondItem="QmE-uD-XDC" secondAttribute="leading" id="4pO-Gp-uIx"/>
+                                    <constraint firstItem="fRF-Iz-51G" firstAttribute="top" secondItem="Cqs-CA-Wrc" secondAttribute="bottom" constant="2" id="HFY-la-B4R"/>
+                                    <constraint firstAttribute="trailing" secondItem="EsB-0P-obd" secondAttribute="trailing" id="KuS-20-gQI"/>
+                                    <constraint firstItem="QmE-uD-XDC" firstAttribute="top" secondItem="EsB-0P-obd" secondAttribute="bottom" constant="3" id="LaW-Co-EbC"/>
+                                    <constraint firstItem="Cqs-CA-Wrc" firstAttribute="top" secondItem="QmE-uD-XDC" secondAttribute="bottom" constant="-2" id="Q1H-2E-CvE"/>
+                                    <constraint firstItem="1cw-vw-sGi" firstAttribute="top" secondItem="fRF-Iz-51G" secondAttribute="bottom" id="Vz8-34-b62"/>
+                                    <constraint firstItem="fRF-Iz-51G" firstAttribute="leading" secondItem="Cqs-CA-Wrc" secondAttribute="leading" id="jxS-Pd-saI"/>
+                                    <constraint firstItem="1cw-vw-sGi" firstAttribute="leading" secondItem="fRF-Iz-51G" secondAttribute="leading" id="wAA-Sw-Gve"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="beerImageView" destination="EsB-0P-obd" id="bgl-9O-6kM"/>
+                                    <outlet property="beerNameLabel" destination="QmE-uD-XDC" id="iyW-Cm-8gY"/>
+                                    <outlet property="breweryNameLabel" destination="Cqs-CA-Wrc" id="IM8-7p-DeX"/>
+                                    <outlet property="dateLabel" destination="1cw-vw-sGi" id="2Gj-xE-9ZP"/>
+                                    <outlet property="locationLabel" destination="fRF-Iz-51G" id="YTv-Pj-Itf"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="35w-GP-aCW" id="fEc-ZY-P4T"/>
+                            <outlet property="delegate" destination="35w-GP-aCW" id="yHY-w6-F1x"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="h6E-PL-Q2w">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MKH-Qt-Pfc">
+                            <connections>
+                                <segue destination="smS-Ik-HtZ" kind="show" id="nW3-dK-Z2b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KDK-hk-fa2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="688.79999999999995" y="1187.8560719640182"/>
         </scene>
         <!--Add Beer-->
         <scene sceneID="LjJ-2z-HwJ">
@@ -217,7 +313,7 @@
                                 <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lGq-i2-8M0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lGq-i2-8M0">
                                 <rect key="frame" x="25" y="409" width="155" height="155"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvR-9I-b6z">
@@ -384,7 +480,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Sjq-4S-pei" kind="relationship" relationship="rootViewController" id="A5z-xQ-jk3"/>
+                        <segue destination="35w-GP-aCW" kind="relationship" relationship="rootViewController" id="jzM-RQ-giI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5F5-Wp-gfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -392,4 +488,7 @@
             <point key="canvasLocation" x="-209" y="464"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="nW3-dK-Z2b"/>
+    </inferredMetricsTieBreakers>
 </document>
