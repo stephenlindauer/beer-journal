@@ -9,12 +9,18 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <UIKit/UIKit.h>
+
 
 @class Beer;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BeerLog : NSManagedObject
+
+- ( UIImage * _Nullable )image;
+- (void)setImage:(UIImage *)image;
+
 
 @end
 

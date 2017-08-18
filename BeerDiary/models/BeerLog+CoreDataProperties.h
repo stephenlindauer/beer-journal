@@ -2,7 +2,7 @@
 //  BeerLog+CoreDataProperties.h
 //  BeerDiary
 //
-//  Created by Stephen Lindauer on 8/16/17.
+//  Created by Stephen Lindauer on 8/17/17.
 //  Copyright © 2017 Stephen Lindauer. All rights reserved.
 //
 //
@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class Location;
+@class Beer, Location;
 
 @interface BeerLog (CoreDataProperties)
 
@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) float locationLatitude;
 @property (nonatomic) float locationLongitude;
 @property (nonatomic) int16_t rating;
+@property (nullable, nonatomic, retain) NSData *imageData;
 @property (nullable, nonatomic, retain) Beer *beer;
 @property (nullable, nonatomic, retain) Location *location;
 

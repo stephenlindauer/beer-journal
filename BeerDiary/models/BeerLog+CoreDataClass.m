@@ -11,4 +11,18 @@
 
 @implementation BeerLog
 
+- (UIImage * _Nullable)image
+{
+    if (self.imageData == nil) {
+        return nil;
+    }
+    
+    return [UIImage imageWithData:self.imageData];
+}
+
+- (void)setImage:(UIImage *)image
+{
+    self.imageData = UIImageJPEGRepresentation(image, 1);
+}
+
 @end

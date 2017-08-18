@@ -17,9 +17,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *changeDateButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelDateButton;
+@property (weak, nonatomic) IBOutlet UIButton *addPhotoButton;
+@property (weak, nonatomic) IBOutlet UIImageView *beerImageView;
 
 - (IBAction)cancelSetDate:(id)sender;
 - (IBAction)changeDate:(id)sender;
 - (IBAction)roundSliderToValue:(id)sender;
+- (IBAction)addPhoto:(id)sender;
+
 
 @end

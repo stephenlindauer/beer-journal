@@ -24,9 +24,11 @@
 #import "BDSetLocationViewController.h"
 #import "NSDate+Helper.h"
 #import "BDBeerSuggestionAccessoryView.h"
+#import "UIImage+Utils.h"
 
 
-@interface BDAddBeerLogViewController () <CLLocationManagerDelegate, UICollectionViewDelegateFlowLayout, UITextFieldDelegate, BDSetLocationDelegate, UIPickerViewDelegate, BDBeerSuggestionDelegate>
+
+@interface BDAddBeerLogViewController () <CLLocationManagerDelegate, UICollectionViewDelegateFlowLayout, UITextFieldDelegate, BDSetLocationDelegate, UIPickerViewDelegate, BDBeerSuggestionDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) Location *suggestedLocation;
@@ -97,6 +99,7 @@
     log.location = self.suggestedLocation;
     log.date = self.date ?: [NSDate date];
     log.rating = self.ratingSlider.value;
+    [log setImage:self.beerImageView.image];
     [log saveManagedObjectContext];
     
     [self.navigationController popViewControllerAnimated:YES];
@@ -133,6 +136,35 @@
 
 - (IBAction)roundSliderToValue:(id)sender {
     self.ratingSlider.value = (int)(self.ratingSlider.value + 0.5);
+}
+
+- (IBAction)addPhoto:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Add a photo" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"Camera" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self showImagePickerWithSourceType:UIImagePickerControllerSourceTypeCamera];
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"Photo Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self showImagePickerWithSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)showImagePickerWithSourceType:(UIImagePickerControllerSourceType)sourceType
+{
+    UIImagePickerController *imagePicker = [UIImagePickerController new];
+    imagePicker.sourceType = sourceType;
+    imagePicker.delegate = self;
+    
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 - (void)fetchLocationsFrom:(CLLocation *)location
@@ -222,6 +254,22 @@
     self.breweryTextField.text = beer.brewery.name;
     
     [self.beerTextField resignFirstResponder];
+}
+
+#pragma mark - Image picker delegate
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    image = [[image cropCenter] resize:CGSizeMake(960, 960)];
+    self.beerImageView.image = [[image cropCenter] resize:CGSizeMake(200, 200)];
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

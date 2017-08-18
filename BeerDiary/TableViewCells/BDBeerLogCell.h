@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *breweryNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *beerImageView;
 
 @property (nonatomic, weak) BeerLog *log;
 

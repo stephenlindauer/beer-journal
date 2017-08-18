@@ -2,7 +2,7 @@
 //  BeerLog+CoreDataProperties.m
 //  BeerDiary
 //
-//  Created by Stephen Lindauer on 8/16/17.
+//  Created by Stephen Lindauer on 8/17/17.
 //  Copyright © 2017 Stephen Lindauer. All rights reserved.
 //
 //
@@ -19,6 +19,7 @@
 @dynamic locationLatitude;
 @dynamic locationLongitude;
 @dynamic rating;
+@dynamic imageData;
 @dynamic beer;
 @dynamic location;
 

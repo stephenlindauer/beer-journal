@@ -35,6 +35,7 @@
     self.breweryNameLabel.text = log.beer.brewery.name;
     self.dateLabel.text = [log.date stringDaysAgo];
     self.locationLabel.text = log.location.name;
+    self.beerImageView.image = log.image;
 }
 
 @end

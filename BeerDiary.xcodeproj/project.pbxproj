@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		19E131441BE4DCB45ECAF5FF /* Pods_BeerDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AA1C856AF2142CD2D523F0 /* Pods_BeerDiary.framework */; };
+		2C0AFC1A1F464C0B00053003 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0AFC191F464C0B00053003 /* UIImage+Utils.m */; };
 		2C0EE0DD1F4232B0000C6BE8 /* BDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EE0DC1F4232B0000C6BE8 /* BDClient.m */; };
 		2C0EE0E01F423319000C6BE8 /* BDLocationClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EE0DF1F423319000C6BE8 /* BDLocationClient.m */; };
 		2C0EE0E21F423720000C6BE8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0EE0E11F423720000C6BE8 /* CoreLocation.framework */; };
@@ -50,6 +51,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C0AFC181F464C0B00053003 /* UIImage+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
+		2C0AFC191F464C0B00053003 /* UIImage+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
+		2C0AFC1B1F465BDB00053003 /* BeerDiary 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BeerDiary 4.xcdatamodel"; sourceTree = "<group>"; };
 		2C0EE0DB1F4232B0000C6BE8 /* BDClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDClient.h; sourceTree = "<group>"; };
 		2C0EE0DC1F4232B0000C6BE8 /* BDClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDClient.m; sourceTree = "<group>"; };
 		2C0EE0DE1F423319000C6BE8 /* BDLocationClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDLocationClient.h; sourceTree = "<group>"; };
@@ -257,6 +261,8 @@
 				2C5B16951F3DFBE300E1D32B /* UIAlertController+Quickie.m */,
 				2C5B16961F3DFBE300E1D32B /* UIViewController+ErrorAndLoading.h */,
 				2C5B16971F3DFBE300E1D32B /* UIViewController+ErrorAndLoading.m */,
+				2C0AFC181F464C0B00053003 /* UIImage+Utils.h */,
+				2C0AFC191F464C0B00053003 /* UIImage+Utils.m */,
 			);
 			path = "ios-utils";
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 		2C2649081F3DEEB50022F5BE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BD;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Stephen Lindauer";
 				TargetAttributes = {
@@ -467,6 +474,7 @@
 				2C8ACD3D1F44ED83003FAABC /* BDLocationCell.m in Sources */,
 				2C2649181F3DEEB50022F5BE /* ViewController.m in Sources */,
 				2CD684D61F46043400AC1697 /* BDNavigationController.m in Sources */,
+				2C0AFC1A1F464C0B00053003 /* UIImage+Utils.m in Sources */,
 				2C8ACD401F44F653003FAABC /* BDGenericTextCell.m in Sources */,
 				2C5B16A11F3E060600E1D32B /* LUAutocompleteViewDelegate.swift in Sources */,
 				2C2299491F44865000E7CD85 /* BDBeerSuggestionCell.m in Sources */,
@@ -670,11 +678,12 @@
 		2C26491C1F3DEEB50022F5BE /* BeerDiary.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				2C0AFC1B1F465BDB00053003 /* BeerDiary 4.xcdatamodel */,
 				2C8ACD411F45092D003FAABC /* BeerDiary 3.xcdatamodel */,
 				2C0EE0E31F423C9A000C6BE8 /* BeerDiary 2.xcdatamodel */,
 				2C26491D1F3DEEB50022F5BE /* BeerDiary.xcdatamodel */,
 			);
-			currentVersion = 2C8ACD411F45092D003FAABC /* BeerDiary 3.xcdatamodel */;
+			currentVersion = 2C0AFC1B1F465BDB00053003 /* BeerDiary 4.xcdatamodel */;
 			path = BeerDiary.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

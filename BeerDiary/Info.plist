@@ -20,6 +20,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Take photos of your beers to remember later</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Determine location of beer being logged</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -28,6 +30,8 @@
 	<string>Determine location of beer being logged</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Determine location of beer being logged</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Upload photos of your beers to remember later</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
