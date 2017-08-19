@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class Location;
+@class Location, CLLocation;
 
 @protocol BDSetLocationDelegate
 - (void)locationChangedTo:(Location *)location;
@@ -16,6 +16,7 @@
 
 @interface BDSetLocationViewController : UITableViewController
 
+@property (nonatomic, weak) CLLocation *startingLocation;
 @property (nonatomic, strong) NSArray <Location *> *locations;
 @property (nonatomic, strong) id<BDSetLocationDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;

@@ -51,6 +51,7 @@
     self.beerNameLabel.text = log.beer.name;
     self.breweryNameLabel.text = log.beer.brewery.name;
     self.dateLabel.text = [log.date stringDaysAgo];
+    self.dateLabel.text = [log.date stringWithFormat:@"MMM d, h:mm a"];
     self.locationLabel.text = log.location.name;
     self.beerImageView.image = log.image;
 }
@@ -65,8 +66,6 @@
     } completion:^(BOOL finished) {
         
     }];
-    
-    NSLog(@"PRESS");
 }
 
 - (IBAction)confirmDelete:(id)sender {

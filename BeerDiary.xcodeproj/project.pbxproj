@@ -11,6 +11,7 @@
 		2C0AFC1A1F464C0B00053003 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0AFC191F464C0B00053003 /* UIImage+Utils.m */; };
 		2C0AFC1E1F4679BA00053003 /* BDRecentBeerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0AFC1D1F4679BA00053003 /* BDRecentBeerCell.m */; };
 		2C0AFC211F467A6E00053003 /* BDDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0AFC201F467A6E00053003 /* BDDashboardViewController.m */; };
+		2C0AFC231F48DCC000053003 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0AFC221F48DCC000053003 /* Photos.framework */; };
 		2C0EE0DD1F4232B0000C6BE8 /* BDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EE0DC1F4232B0000C6BE8 /* BDClient.m */; };
 		2C0EE0E01F423319000C6BE8 /* BDLocationClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EE0DF1F423319000C6BE8 /* BDLocationClient.m */; };
 		2C0EE0E21F423720000C6BE8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0EE0E11F423720000C6BE8 /* CoreLocation.framework */; };
@@ -60,6 +61,7 @@
 		2C0AFC1D1F4679BA00053003 /* BDRecentBeerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDRecentBeerCell.m; sourceTree = "<group>"; };
 		2C0AFC1F1F467A6E00053003 /* BDDashboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDDashboardViewController.h; sourceTree = "<group>"; };
 		2C0AFC201F467A6E00053003 /* BDDashboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDDashboardViewController.m; sourceTree = "<group>"; };
+		2C0AFC221F48DCC000053003 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		2C0EE0DB1F4232B0000C6BE8 /* BDClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDClient.h; sourceTree = "<group>"; };
 		2C0EE0DC1F4232B0000C6BE8 /* BDClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDClient.m; sourceTree = "<group>"; };
 		2C0EE0DE1F423319000C6BE8 /* BDLocationClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDLocationClient.h; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C0AFC231F48DCC000053003 /* Photos.framework in Frameworks */,
 				2CD684D91F46087500AC1697 /* CloudKit.framework in Frameworks */,
 				2C0EE0E21F423720000C6BE8 /* CoreLocation.framework in Frameworks */,
 				19E131441BE4DCB45ECAF5FF /* Pods_BeerDiary.framework in Frameworks */,
@@ -305,6 +308,7 @@
 		7B9759F1D6E555C75B63DE0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C0AFC221F48DCC000053003 /* Photos.framework */,
 				2CD684D81F46087500AC1697 /* CloudKit.framework */,
 				2C0EE0E11F423720000C6BE8 /* CoreLocation.framework */,
 				D7AA1C856AF2142CD2D523F0 /* Pods_BeerDiary.framework */,

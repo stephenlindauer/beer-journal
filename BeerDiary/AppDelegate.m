@@ -53,6 +53,13 @@
 //    l.isCustomUserLocation = YES;
 //    [l saveManagedObjectContext];
 //    NSLog(@"L: %@", l);
+    
+//    Location *l = [Location createEntity];
+//    l.latitude = 21.26942833;
+//    l.longitude = -157.85066167;
+//    l.name = @"On a boat";
+//    l.isCustomUserLocation = YES;
+//    [l saveManagedObjectContext];
   
     
     

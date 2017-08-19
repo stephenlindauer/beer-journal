@@ -17,8 +17,6 @@
 @interface BDSetLocationViewController () <UISearchBarDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, strong) NSArray <Location *> *filteredLocations;
-@property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) CLLocation *lastLocation;
 
 @end
 
@@ -28,16 +26,6 @@
     [super viewDidLoad];
 
     self.filteredLocations = self.locations;
-    
-    self.locationManager = [CLLocationManager new];
-    self.locationManager.delegate = self;
-    [self.locationManager startUpdatingLocation];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [self.locationManager stopUpdatingLocation];
-    self.locationManager = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,8 +85,8 @@
     else {
         Location *location = [Location createEntity];
         location.name = self.searchBar.text;
-        location.latitude = self.lastLocation.coordinate.latitude;
-        location.longitude = self.lastLocation.coordinate.longitude;
+        location.latitude = self.startingLocation.coordinate.latitude;
+        location.longitude = self.startingLocation.coordinate.longitude;
         location.isCustomUserLocation = YES;
         
         [self.delegate locationChangedTo:location];
@@ -118,13 +106,6 @@
     }
     
     [self.tableView reloadData];
-}
-
-#pragma mark - Location manager
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
-{
-    self.lastLocation = locations[0];
 }
 
 @end

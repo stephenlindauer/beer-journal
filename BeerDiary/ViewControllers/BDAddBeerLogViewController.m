@@ -25,7 +25,7 @@
 #import "NSDate+Helper.h"
 #import "BDBeerSuggestionAccessoryView.h"
 #import "UIImage+Utils.h"
-
+#import <Photos/Photos.h>
 
 
 @interface BDAddBeerLogViewController () <CLLocationManagerDelegate, UICollectionViewDelegateFlowLayout, UITextFieldDelegate, BDSetLocationDelegate, UIPickerViewDelegate, BDBeerSuggestionDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -177,8 +177,8 @@
             allValidLocations = [allValidLocations sortedArrayUsingComparator:^NSComparisonResult(Location * _Nonnull obj1, Location * _Nonnull obj2) {
                 
                 
-                CGFloat d1 = [self.locationManager.location distanceFromLocation:[[CLLocation alloc] initWithLatitude:obj1.latitude longitude:obj1.longitude]];
-                CGFloat d2 = [self.locationManager.location distanceFromLocation:[[CLLocation alloc] initWithLatitude:obj2.latitude longitude:obj2.longitude]];
+                CGFloat d1 = [location distanceFromLocation:[[CLLocation alloc] initWithLatitude:obj1.latitude longitude:obj1.longitude]];
+                CGFloat d2 = [location distanceFromLocation:[[CLLocation alloc] initWithLatitude:obj2.latitude longitude:obj2.longitude]];
                 
                 return d1 > d2;
             }];
@@ -265,6 +265,19 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
+    NSLog(@"info: %@", info);
+    
+    NSURL *url = [info objectForKey:UIImagePickerControllerReferenceURL];
+    PHFetchResult *fetchResult = [PHAsset fetchAssetsWithALAssetURLs:@[url] options:nil];
+    PHAsset *asset = fetchResult.firstObject;
+    NSLog(@"location: %@", asset.location);
+    NSLog(@"date: %@", asset.creationDate);
+    
+    self.date = asset.creationDate;
+    self.dateLabel.text = [self.date stringWithFormat:@"MMM d, yyyy h:mm a"];
+    
+    [self fetchLocationsFrom:asset.location];
+    
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     image = [[image cropCenter] resize:CGSizeMake(960, 960)];
     self.beerImageView.image = [[image cropCenter] resize:CGSizeMake(600, 600)];

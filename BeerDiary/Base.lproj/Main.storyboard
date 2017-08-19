@@ -109,7 +109,7 @@
             </objects>
             <point key="canvasLocation" x="688.79999999999995" y="463.71814092953525"/>
         </scene>
-        <!--Dashboard View Controller-->
+        <!--Recent Beers-->
         <scene sceneID="GRd-xG-Zvc">
             <objects>
                 <collectionViewController id="35w-GP-aCW" customClass="BDDashboardViewController" sceneMemberID="viewController">
@@ -236,7 +236,7 @@
                             <outlet property="delegate" destination="35w-GP-aCW" id="yHY-w6-F1x"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="h6E-PL-Q2w">
+                    <navigationItem key="navigationItem" title="Recent Beers" id="h6E-PL-Q2w">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="MKH-Qt-Pfc">
                             <connections>
                                 <segue destination="smS-Ik-HtZ" kind="show" id="nW3-dK-Z2b"/>
