@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -237,16 +238,84 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Recent Beers" id="h6E-PL-Q2w">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MKH-Qt-Pfc">
-                            <connections>
-                                <segue destination="smS-Ik-HtZ" kind="show" id="nW3-dK-Z2b"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="MKH-Qt-Pfc">
+                                <connections>
+                                    <segue destination="smS-Ik-HtZ" kind="show" id="nW3-dK-Z2b"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="compose" id="DXU-SF-dJd">
+                                <connections>
+                                    <segue destination="QKm-QG-Uoz" kind="presentation" id="ejA-7w-z79"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDK-hk-fa2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="688.79999999999995" y="1187.8560719640182"/>
+        </scene>
+        <!--Select Photo View Controller-->
+        <scene sceneID="RJu-2I-1G3">
+            <objects>
+                <viewController id="qgB-vo-wGn" customClass="BDSelectPhotoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DzK-72-kCr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLc-TO-Erz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zyq-nO-rzd" customClass="BDCamPreviewView">
+                                        <rect key="frame" x="0.0" y="-63" width="375" height="500"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Zyq-nO-rzd" secondAttribute="height" multiplier="3:4" id="DJL-7w-ENz"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dLc-TO-Erz" secondAttribute="height" multiplier="1:1" id="NrA-8h-JAc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zyq-nO-rzd" secondAttribute="trailing" id="gBy-BE-aPY"/>
+                                    <constraint firstItem="Zyq-nO-rzd" firstAttribute="centerY" secondItem="dLc-TO-Erz" secondAttribute="centerY" id="jPO-vp-bm4"/>
+                                    <constraint firstItem="Zyq-nO-rzd" firstAttribute="leading" secondItem="dLc-TO-Erz" secondAttribute="leading" id="xhr-f7-5mA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cyan="0.0" magenta="0.20000000000000001" yellow="0.59999999999999998" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dLc-TO-Erz" firstAttribute="leading" secondItem="Cn4-sx-cTa" secondAttribute="leading" id="Soy-ve-JFK"/>
+                            <constraint firstItem="Cn4-sx-cTa" firstAttribute="trailing" secondItem="dLc-TO-Erz" secondAttribute="trailing" id="ZoV-k5-Qc3"/>
+                            <constraint firstItem="dLc-TO-Erz" firstAttribute="top" secondItem="Cn4-sx-cTa" secondAttribute="top" id="gQx-0T-ChQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cn4-sx-cTa"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="V4p-Q7-B6D"/>
+                    <connections>
+                        <outlet property="camPreviewView" destination="Zyq-nO-rzd" id="XRH-ZL-yRf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1fG-qd-ADN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2709.5999999999999" y="1173.4632683658172"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pWC-gJ-8Rj">
+            <objects>
+                <navigationController id="QKm-QG-Uoz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k9i-6T-I7s">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qgB-vo-wGn" kind="relationship" relationship="rootViewController" id="fAN-Pc-33o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0dn-Lg-qR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2018" y="1175"/>
         </scene>
         <!--Add Beer-->
         <scene sceneID="LjJ-2z-HwJ">

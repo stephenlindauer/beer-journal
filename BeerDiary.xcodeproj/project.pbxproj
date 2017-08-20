@@ -12,6 +12,9 @@
 		2C0AFC1E1F4679BA00053003 /* BDRecentBeerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0AFC1D1F4679BA00053003 /* BDRecentBeerCell.m */; };
 		2C0AFC211F467A6E00053003 /* BDDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0AFC201F467A6E00053003 /* BDDashboardViewController.m */; };
 		2C0AFC231F48DCC000053003 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0AFC221F48DCC000053003 /* Photos.framework */; };
+		2C0AFC261F490AE100053003 /* BDSelectPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0AFC251F490AE100053003 /* BDSelectPhotoViewController.m */; };
+		2C0AFC291F490B0400053003 /* BDCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0AFC281F490B0400053003 /* BDCamPreviewView.m */; };
+		2C0AFC2C1F490E0200053003 /* AVCamPhotoCaptureDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0AFC2A1F490E0100053003 /* AVCamPhotoCaptureDelegate.m */; };
 		2C0EE0DD1F4232B0000C6BE8 /* BDClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EE0DC1F4232B0000C6BE8 /* BDClient.m */; };
 		2C0EE0E01F423319000C6BE8 /* BDLocationClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0EE0DF1F423319000C6BE8 /* BDLocationClient.m */; };
 		2C0EE0E21F423720000C6BE8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0EE0E11F423720000C6BE8 /* CoreLocation.framework */; };
@@ -62,6 +65,12 @@
 		2C0AFC1F1F467A6E00053003 /* BDDashboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDDashboardViewController.h; sourceTree = "<group>"; };
 		2C0AFC201F467A6E00053003 /* BDDashboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDDashboardViewController.m; sourceTree = "<group>"; };
 		2C0AFC221F48DCC000053003 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		2C0AFC241F490AE100053003 /* BDSelectPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSelectPhotoViewController.h; sourceTree = "<group>"; };
+		2C0AFC251F490AE100053003 /* BDSelectPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDSelectPhotoViewController.m; sourceTree = "<group>"; };
+		2C0AFC271F490B0400053003 /* BDCamPreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDCamPreviewView.h; sourceTree = "<group>"; };
+		2C0AFC281F490B0400053003 /* BDCamPreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDCamPreviewView.m; sourceTree = "<group>"; };
+		2C0AFC2A1F490E0100053003 /* AVCamPhotoCaptureDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVCamPhotoCaptureDelegate.m; sourceTree = "<group>"; };
+		2C0AFC2B1F490E0200053003 /* AVCamPhotoCaptureDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVCamPhotoCaptureDelegate.h; sourceTree = "<group>"; };
 		2C0EE0DB1F4232B0000C6BE8 /* BDClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDClient.h; sourceTree = "<group>"; };
 		2C0EE0DC1F4232B0000C6BE8 /* BDClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDClient.m; sourceTree = "<group>"; };
 		2C0EE0DE1F423319000C6BE8 /* BDLocationClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDLocationClient.h; sourceTree = "<group>"; };
@@ -203,6 +212,12 @@
 				2C22994A1F44921300E7CD85 /* CollectionView */,
 				2C2649131F3DEEB50022F5BE /* AppDelegate.h */,
 				2C2649141F3DEEB50022F5BE /* AppDelegate.m */,
+				2C0AFC241F490AE100053003 /* BDSelectPhotoViewController.h */,
+				2C0AFC251F490AE100053003 /* BDSelectPhotoViewController.m */,
+				2C0AFC271F490B0400053003 /* BDCamPreviewView.h */,
+				2C0AFC281F490B0400053003 /* BDCamPreviewView.m */,
+				2C0AFC2B1F490E0200053003 /* AVCamPhotoCaptureDelegate.h */,
+				2C0AFC2A1F490E0100053003 /* AVCamPhotoCaptureDelegate.m */,
 				2C2649161F3DEEB50022F5BE /* ViewController.h */,
 				2C2649171F3DEEB50022F5BE /* ViewController.m */,
 				2C2649191F3DEEB50022F5BE /* Main.storyboard */,
@@ -479,6 +494,7 @@
 				2C0EE0E81F423D3F000C6BE8 /* Location+CoreDataClass.m in Sources */,
 				2C26491E1F3DEEB50022F5BE /* BeerDiary.xcdatamodeld in Sources */,
 				2C0EE0EF1F423DE0000C6BE8 /* NSManagedObjectContext+Utils.m in Sources */,
+				2C0AFC2C1F490E0200053003 /* AVCamPhotoCaptureDelegate.m in Sources */,
 				2C2649381F3DF0540022F5BE /* Brewery+CoreDataClass.m in Sources */,
 				2C0EE0E01F423319000C6BE8 /* BDLocationClient.m in Sources */,
 				2C26493B1F3DF0540022F5BE /* BeerLog+CoreDataProperties.m in Sources */,
@@ -501,6 +517,8 @@
 				2C2649421F3DF1220022F5BE /* BDRecentBeersViewController.m in Sources */,
 				2C0AFC1E1F4679BA00053003 /* BDRecentBeerCell.m in Sources */,
 				2C26493A1F3DF0540022F5BE /* BeerLog+CoreDataClass.m in Sources */,
+				2C0AFC291F490B0400053003 /* BDCamPreviewView.m in Sources */,
+				2C0AFC261F490AE100053003 /* BDSelectPhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

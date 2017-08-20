@@ -46,6 +46,10 @@ static NSString * const reuseIdentifier = @"RecentBeerCell";
     [self.collectionView reloadData];
 }
 
+- (IBAction)showNewBeerView:(id)sender {
+    
+}
+
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
