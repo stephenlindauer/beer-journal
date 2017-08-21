@@ -13,4 +13,6 @@ Photo capture delegate.
 
 @property (nonatomic, readonly) AVCapturePhotoSettings *requestedPhotoSettings;
 
+- (UIImage *)capturedImage;
+
 @end

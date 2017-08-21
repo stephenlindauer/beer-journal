@@ -128,4 +128,9 @@ Photo capture delegate.
 	}];
 }
 
+- (UIImage *)capturedImage
+{
+    return [UIImage imageWithData:self.photoData];
+}
+
 @end
