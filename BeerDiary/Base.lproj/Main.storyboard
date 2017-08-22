@@ -338,6 +338,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cyan="0.0" magenta="0.20000000000000001" yellow="0.59999999999999998" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                        <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="50"/>
                         <inset key="separatorInset" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <sections>
                             <tableViewSection headerTitle="" id="4ez-1k-ckn">
@@ -382,7 +383,7 @@
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="EVG-8H-1TT" id="zyS-TQ-Ykx"/>
                                                     </connections>
@@ -414,7 +415,7 @@
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="EVG-8H-1TT" id="CUb-y8-fth"/>
                                                     </connections>
@@ -520,6 +521,7 @@
                         <outlet property="beerImageView" destination="PmR-Cm-zvz" id="tJO-tM-gkN"/>
                         <outlet property="beerTextField" destination="KSB-YJ-jm8" id="xjj-yP-ahR"/>
                         <outlet property="breweryTextField" destination="xZM-pG-U55" id="D6S-7T-W1X"/>
+                        <outlet property="imageViewCell" destination="phf-9x-cbl" id="K2l-uj-XRb"/>
                         <outlet property="locationTextField" destination="dGU-fK-Bqy" id="IW0-rm-1Se"/>
                         <outlet property="ratingMessage" destination="Ple-Ze-deP" id="Ttv-gP-RAi"/>
                         <outlet property="ratingSliderView" destination="C2E-5A-bqg" id="s2U-2T-S4R"/>

@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) BeerLog *beerLog;
 
+@property (weak, nonatomic) IBOutlet UITableViewCell *imageViewCell;
 @property (weak, nonatomic) IBOutlet UIImageView *beerImageView;
 @property (weak, nonatomic) IBOutlet UITextField *beerTextField;
 @property (weak, nonatomic) IBOutlet UITextField *breweryTextField;

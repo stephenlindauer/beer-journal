@@ -31,7 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.tableView.bounces = YES;
+    self.tableView.alwaysBounceVertical = YES;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(saveBeerLog)];
     
@@ -48,8 +49,6 @@
         self.locationManager.delegate = self;
         [self.locationManager requestAlwaysAuthorization];
         [self.locationManager startUpdatingLocation];
-        
-        
     }
 }
 
@@ -158,7 +157,16 @@
     }];
 }
 
+#pragma mark - Table View delegate
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        return self.view.bounds.size.width;
+    }
+    
+    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+}
 
 #pragma mark - Text Field delegate
 
@@ -180,6 +188,12 @@
         [self performSegueWithIdentifier:@"setLocation" sender:nil];
         return NO;
     }
+    
+    // Scroll to show both Beer & Brewery cells (after 0.1s delay)
+    dispatch_time_t t = dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC);
+    dispatch_after(t, dispatch_get_main_queue(), ^{
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    });
     
     return YES;
 }
