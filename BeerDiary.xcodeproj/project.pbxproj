@@ -51,6 +51,7 @@
 		2C8ACD391F44E84E003FAABC /* BDSetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8ACD381F44E84E003FAABC /* BDSetLocationViewController.m */; };
 		2C8ACD3D1F44ED83003FAABC /* BDLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8ACD3C1F44ED83003FAABC /* BDLocationCell.m */; };
 		2C8ACD401F44F653003FAABC /* BDGenericTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8ACD3F1F44F653003FAABC /* BDGenericTextCell.m */; };
+		2CADA90E1F4B8B66005238CA /* BDBeerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CADA90D1F4B8B66005238CA /* BDBeerDetailsViewController.m */; };
 		2CD684D61F46043400AC1697 /* BDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD684D51F46043400AC1697 /* BDNavigationController.m */; };
 		2CD684D91F46087500AC1697 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD684D81F46087500AC1697 /* CloudKit.framework */; };
 		2CD684DC1F46103400AC1697 /* BDBeerSuggestionAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD684DB1F46103400AC1697 /* BDBeerSuggestionAccessoryView.m */; };
@@ -139,6 +140,8 @@
 		2C8ACD3E1F44F653003FAABC /* BDGenericTextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDGenericTextCell.h; sourceTree = "<group>"; };
 		2C8ACD3F1F44F653003FAABC /* BDGenericTextCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDGenericTextCell.m; sourceTree = "<group>"; };
 		2C8ACD411F45092D003FAABC /* BeerDiary 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BeerDiary 3.xcdatamodel"; sourceTree = "<group>"; };
+		2CADA90C1F4B8B66005238CA /* BDBeerDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDBeerDetailsViewController.h; sourceTree = "<group>"; };
+		2CADA90D1F4B8B66005238CA /* BDBeerDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDBeerDetailsViewController.m; sourceTree = "<group>"; };
 		2CD684D41F46043400AC1697 /* BDNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDNavigationController.h; sourceTree = "<group>"; };
 		2CD684D51F46043400AC1697 /* BDNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDNavigationController.m; sourceTree = "<group>"; };
 		2CD684D71F46075400AC1697 /* BeerDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeerDiary.entitlements; sourceTree = "<group>"; };
@@ -212,8 +215,6 @@
 				2C22994A1F44921300E7CD85 /* CollectionView */,
 				2C2649131F3DEEB50022F5BE /* AppDelegate.h */,
 				2C2649141F3DEEB50022F5BE /* AppDelegate.m */,
-				2C0AFC241F490AE100053003 /* BDSelectPhotoViewController.h */,
-				2C0AFC251F490AE100053003 /* BDSelectPhotoViewController.m */,
 				2C0AFC271F490B0400053003 /* BDCamPreviewView.h */,
 				2C0AFC281F490B0400053003 /* BDCamPreviewView.m */,
 				2C0AFC2B1F490E0200053003 /* AVCamPhotoCaptureDelegate.h */,
@@ -274,6 +275,10 @@
 				2C5B16A41F3E06A100E1D32B /* BDAddBeerLogViewController.m */,
 				2C8ACD371F44E84E003FAABC /* BDSetLocationViewController.h */,
 				2C8ACD381F44E84E003FAABC /* BDSetLocationViewController.m */,
+				2C0AFC241F490AE100053003 /* BDSelectPhotoViewController.h */,
+				2C0AFC251F490AE100053003 /* BDSelectPhotoViewController.m */,
+				2CADA90C1F4B8B66005238CA /* BDBeerDetailsViewController.h */,
+				2CADA90D1F4B8B66005238CA /* BDBeerDetailsViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -501,6 +506,7 @@
 				2C0EE0EE1F423DE0000C6BE8 /* NSManagedObject+CoreData.m in Sources */,
 				2C26493C1F3DF0540022F5BE /* Beer+CoreDataClass.m in Sources */,
 				2C0EE0DD1F4232B0000C6BE8 /* BDClient.m in Sources */,
+				2CADA90E1F4B8B66005238CA /* BDBeerDetailsViewController.m in Sources */,
 				2C8ACD3D1F44ED83003FAABC /* BDLocationCell.m in Sources */,
 				2C2649181F3DEEB50022F5BE /* ViewController.m in Sources */,
 				2CD684D61F46043400AC1697 /* BDNavigationController.m in Sources */,

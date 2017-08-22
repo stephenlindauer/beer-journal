@@ -12,6 +12,9 @@
 #import "BDCamPreviewView.h"
 #import "AVCamPhotoCaptureDelegate.h"
 #import "UIImage+Utils.h"
+#import "BDBeerDetailsViewController.h"
+#import "BeerLog+CoreDataClass.h"
+#import "NSManagedObject+CoreData.h"
 
 
 static void * SessionRunningContext = &SessionRunningContext;
@@ -145,6 +148,19 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 }
 
 #pragma mark Actions
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    BDBeerDetailsViewController *detailsViewController = segue.destinationViewController;
+    
+    BeerLog *log = [BeerLog createEntity];
+    [log setImage:self.capturedImageView.image];
+    log.date = [NSDate date];
+    
+    
+    detailsViewController.beerLog = log;
+    
+}
 
 - (void)cancel
 {
@@ -405,6 +421,8 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
                 self.capturedImageView.image = image;
                 self.capturedImageView.hidden = NO;
                 self.camPreviewView.hidden = YES;
+                
+                [self performSegueWithIdentifier:@"showBeerDetails" sender:nil];
             });
         }];
         

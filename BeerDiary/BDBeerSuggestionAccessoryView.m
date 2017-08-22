@@ -50,7 +50,7 @@
     NSArray <BeerLog *> *recentLogs = [BeerLog findAllSortedBy:@"date" ascending:NO];
     NSMutableArray *beers = [[NSMutableArray alloc] initWithCapacity:10];
     for (int i=0; i<MIN(10, recentLogs.count); i++) {
-        if (![beers containsObject:recentLogs[i].beer]) {
+        if (![beers containsObject:recentLogs[i].beer] && recentLogs[i].beer != nil) {
             [beers addObject:recentLogs[i].beer];
         }
     }
@@ -65,7 +65,7 @@
     }
     // Search
     else {
-        self.beers = [Beer findAllWithPredicate:[NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", search]];
+        self.beers = [Beer findAllWithPredicate:[NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@ OR brewery.name CONTAINS[cd] %@", search, search]];
     }
     
    [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
