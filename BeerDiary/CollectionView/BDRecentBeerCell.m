@@ -34,7 +34,9 @@
 
 - (void)promptForDelete
 {
-    NSLog(@"Prompt for delete");
+    self.optionsContainerViewConstraint.constant = self.bounds.size.height;
+    [self layoutIfNeeded];
+    
     self.optionsContainerViewConstraint.constant = 0;
     
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
@@ -48,6 +50,8 @@
 {
     _log = log;
     
+    self.profileImageView.layer.cornerRadius = 20;
+    
     self.beerNameLabel.text = log.beer.name;
     self.breweryNameLabel.text = log.beer.brewery.name;
     self.dateLabel.text = [log.date stringDaysAgo];
@@ -58,6 +62,9 @@
 
 
 - (IBAction)showOptions:(id)sender {
+    self.optionsContainerViewConstraint.constant = self.bounds.size.height;
+    [self layoutIfNeeded];
+    self.hidden = NO;
     
     self.optionsContainerViewConstraint.constant = 0;
     

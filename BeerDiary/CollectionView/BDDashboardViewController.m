@@ -56,6 +56,14 @@ static NSString * const reuseIdentifier = @"RecentBeerCell";
     return 1;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Full width
+     return CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width + 90);
+    
+    // 3 per row
+//    return CGSizeMake(self.view.bounds.size.width / 3, self.view.bounds.size.width / 3 + 50);
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.recentBeers.count;

@@ -18,6 +18,8 @@
 
 @interface BDRecentBeerCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *profileNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *beerNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *breweryNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
