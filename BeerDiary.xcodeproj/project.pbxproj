@@ -55,6 +55,8 @@
 		2CD684D61F46043400AC1697 /* BDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD684D51F46043400AC1697 /* BDNavigationController.m */; };
 		2CD684D91F46087500AC1697 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD684D81F46087500AC1697 /* CloudKit.framework */; };
 		2CD684DC1F46103400AC1697 /* BDBeerSuggestionAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD684DB1F46103400AC1697 /* BDBeerSuggestionAccessoryView.m */; };
+		2CF962811F4E6C6000AECCE9 /* BDDeleteCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF962801F4E6C6000AECCE9 /* BDDeleteCollectionViewController.m */; };
+		2CF962841F4E6CEC00AECCE9 /* BDCamPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF962831F4E6CEC00AECCE9 /* BDCamPreviewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +150,10 @@
 		2CD684D81F46087500AC1697 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		2CD684DA1F46103400AC1697 /* BDBeerSuggestionAccessoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDBeerSuggestionAccessoryView.h; sourceTree = "<group>"; };
 		2CD684DB1F46103400AC1697 /* BDBeerSuggestionAccessoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDBeerSuggestionAccessoryView.m; sourceTree = "<group>"; };
+		2CF9627F1F4E6C6000AECCE9 /* BDDeleteCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDDeleteCollectionViewController.h; sourceTree = "<group>"; };
+		2CF962801F4E6C6000AECCE9 /* BDDeleteCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDDeleteCollectionViewController.m; sourceTree = "<group>"; };
+		2CF962821F4E6CEC00AECCE9 /* BDCamPreviewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDCamPreviewCell.h; sourceTree = "<group>"; };
+		2CF962831F4E6CEC00AECCE9 /* BDCamPreviewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDCamPreviewCell.m; sourceTree = "<group>"; };
 		D7AA1C856AF2142CD2D523F0 /* Pods_BeerDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E065A342296CE5953C019C4B /* Pods-BeerDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeerDiary/Pods-BeerDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		F6505CE224BA0519D4C66E36 /* Pods-BeerDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerDiary/Pods-BeerDiary.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +183,8 @@
 				2C0AFC1D1F4679BA00053003 /* BDRecentBeerCell.m */,
 				2C0AFC1F1F467A6E00053003 /* BDDashboardViewController.h */,
 				2C0AFC201F467A6E00053003 /* BDDashboardViewController.m */,
+				2CF962821F4E6CEC00AECCE9 /* BDCamPreviewCell.h */,
+				2CF962831F4E6CEC00AECCE9 /* BDCamPreviewCell.m */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -279,6 +287,8 @@
 				2C0AFC251F490AE100053003 /* BDSelectPhotoViewController.m */,
 				2CADA90C1F4B8B66005238CA /* BDBeerDetailsViewController.h */,
 				2CADA90D1F4B8B66005238CA /* BDBeerDetailsViewController.m */,
+				2CF9627F1F4E6C6000AECCE9 /* BDDeleteCollectionViewController.h */,
+				2CF962801F4E6C6000AECCE9 /* BDDeleteCollectionViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -495,6 +505,7 @@
 				2C0EE0E91F423D3F000C6BE8 /* Location+CoreDataProperties.m in Sources */,
 				2C8ACD391F44E84E003FAABC /* BDSetLocationViewController.m in Sources */,
 				2C22994D1F44923100E7CD85 /* BDSuggestedBeersLayout.m in Sources */,
+				2CF962811F4E6C6000AECCE9 /* BDDeleteCollectionViewController.m in Sources */,
 				2C5B169E1F3E060600E1D32B /* LUAutocompleteViewDataSource.swift in Sources */,
 				2C0EE0E81F423D3F000C6BE8 /* Location+CoreDataClass.m in Sources */,
 				2C26491E1F3DEEB50022F5BE /* BeerDiary.xcdatamodeld in Sources */,
@@ -525,6 +536,7 @@
 				2C26493A1F3DF0540022F5BE /* BeerLog+CoreDataClass.m in Sources */,
 				2C0AFC291F490B0400053003 /* BDCamPreviewView.m in Sources */,
 				2C0AFC261F490AE100053003 /* BDSelectPhotoViewController.m in Sources */,
+				2CF962841F4E6CEC00AECCE9 /* BDCamPreviewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

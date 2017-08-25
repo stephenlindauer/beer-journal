@@ -269,7 +269,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLc-TO-Erz">
-                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="375"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zyq-nO-rzd" customClass="BDCamPreviewView">
                                         <rect key="frame" x="0.0" y="-63" width="375" height="500"/>
@@ -307,7 +307,7 @@
                                 </constraints>
                             </view>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TqL-OP-SHJ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="375"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" cyan="0.0" magenta="0.20000000000000001" yellow="0.59999999999999998" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
@@ -332,7 +332,107 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fG-qd-ADN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2709.5999999999999" y="1173.4632683658172"/>
+            <point key="canvasLocation" x="2575" y="1874"/>
+        </scene>
+        <!--Select Photo View Controller-->
+        <scene sceneID="TPt-ut-4ga">
+            <objects>
+                <collectionViewController id="0II-He-r4h" customClass="BDSelectPhotoViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tlZ-Dc-Owh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cyan="0.0" magenta="0.20000000000000001" yellow="0.59999999999999998" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jcc-3p-QOf">
+                            <size key="itemSize" width="375" height="375"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="50" height="91"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CamPreviewCell" id="dmp-wd-7Zz" customClass="BDCamPreviewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KnP-2b-te5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKt-sh-jCk" customClass="BDCamPreviewView">
+                                                    <rect key="frame" x="0.0" y="-63" width="375" height="500"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twC-dF-O1v">
+                                                            <rect key="frame" x="147" y="395" width="80" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="80" id="B9l-KQ-bgX"/>
+                                                                <constraint firstAttribute="height" constant="30" id="o1v-PG-250"/>
+                                                            </constraints>
+                                                            <size key="titleShadowOffset" width="1" height="1"/>
+                                                            <state key="normal" title="Photo">
+                                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="capturePhoto:" destination="qgB-vo-wGn" eventType="touchUpInside" id="t2y-aZ-gqJ"/>
+                                                                <action selector="capturePhoto:" destination="dmp-wd-7Zz" eventType="touchUpInside" id="t5y-xL-pUa"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="oKt-sh-jCk" secondAttribute="height" multiplier="3:4" id="8Wp-N2-ATh"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="twC-dF-O1v" firstAttribute="centerX" secondItem="KnP-2b-te5" secondAttribute="centerX" id="0aT-Ll-SP5"/>
+                                                <constraint firstAttribute="width" secondItem="KnP-2b-te5" secondAttribute="height" multiplier="1:1" id="ArC-yZ-HYd"/>
+                                                <constraint firstAttribute="trailing" secondItem="oKt-sh-jCk" secondAttribute="trailing" id="D2n-bU-owO"/>
+                                                <constraint firstAttribute="bottom" secondItem="twC-dF-O1v" secondAttribute="bottom" constant="13" id="Q6R-rs-ClT"/>
+                                                <constraint firstItem="oKt-sh-jCk" firstAttribute="leading" secondItem="KnP-2b-te5" secondAttribute="leading" id="uRb-sk-VET"/>
+                                                <constraint firstItem="oKt-sh-jCk" firstAttribute="centerY" secondItem="KnP-2b-te5" secondAttribute="centerY" id="wXx-fM-dv5"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KnP-2b-te5" secondAttribute="trailing" id="CAu-Yu-wCO"/>
+                                    <constraint firstItem="KnP-2b-te5" firstAttribute="leading" secondItem="dmp-wd-7Zz" secondAttribute="leading" id="ESh-5a-SPJ"/>
+                                    <constraint firstItem="KnP-2b-te5" firstAttribute="top" secondItem="dmp-wd-7Zz" secondAttribute="top" id="P5J-KV-TsR"/>
+                                    <constraint firstAttribute="bottom" secondItem="KnP-2b-te5" secondAttribute="bottom" id="QpW-WE-SiM"/>
+                                    <constraint firstItem="KnP-2b-te5" firstAttribute="width" secondItem="KnP-2b-te5" secondAttribute="height" multiplier="1:1" id="VHJ-50-r5R"/>
+                                </constraints>
+                                <size key="customSize" width="375" height="375"/>
+                                <connections>
+                                    <outlet property="camPreviewView" destination="oKt-sh-jCk" id="ome-i9-N34"/>
+                                    <outlet property="photoButton" destination="twC-dF-O1v" id="qCc-FR-O2M"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OsO-RZ-sb5">
+                                <rect key="frame" x="0.0" y="385" width="375" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hre-wH-aan">
+                            <rect key="frame" x="0.0" y="760" width="375" height="91"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="0II-He-r4h" id="0ZD-MF-kNL"/>
+                            <outlet property="delegate" destination="0II-He-r4h" id="hpR-Oz-DM9"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="NRc-Yv-Ni7"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lLP-k5-CxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2741.5999999999999" y="1173.4632683658172"/>
         </scene>
         <!--Beer Details View Controller-->
         <scene sceneID="RH9-QF-lqd">
@@ -545,7 +645,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="qgB-vo-wGn" kind="relationship" relationship="rootViewController" id="fAN-Pc-33o"/>
+                        <segue destination="0II-He-r4h" kind="relationship" relationship="rootViewController" id="SfD-Y5-Gc9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dn-Lg-qR9" userLabel="First Responder" sceneMemberID="firstResponder"/>

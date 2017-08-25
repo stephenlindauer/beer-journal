@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class BDCamPreviewView;
 
-@interface BDSelectPhotoViewController : UIViewController
+@interface BDSelectPhotoViewController : UICollectionViewController
 
 @property (weak, nonatomic) IBOutlet BDCamPreviewView *camPreviewView;
 
