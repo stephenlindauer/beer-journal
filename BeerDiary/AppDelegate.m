@@ -60,10 +60,6 @@
 //    l.name = @"On a boat";
 //    l.isCustomUserLocation = YES;
 //    [l saveManagedObjectContext];
-  
-    for (Location *location in [Location findAllWithPredicate:[NSPredicate predicateWithFormat:@"isCustomUserLocation = YES"]]) {
-        NSLog(@"location: %f, %f -- %@", location.latitude, location.longitude, location.name);
-    }
     
     
     

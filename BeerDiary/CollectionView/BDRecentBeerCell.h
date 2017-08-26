@@ -25,6 +25,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *beerImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *star1ImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *star2ImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *star3ImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *star4ImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *star5ImageView;
+
+
 
 @property (nonatomic, weak) BeerLog *log;
 @property (nonatomic, weak) id<BDRecentBeerCellDelegate> delegate;

@@ -200,28 +200,73 @@
                                                 <constraint firstItem="XNf-lR-Txt" firstAttribute="centerX" secondItem="ho1-nR-nmE" secondAttribute="centerX" id="xAO-nF-Zhx"/>
                                             </constraints>
                                         </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-star-gold" translatesAutoresizingMaskIntoConstraints="NO" id="4LM-rt-NIn">
+                                            <rect key="frame" x="5" y="346" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="hlU-VB-3uV"/>
+                                                <constraint firstAttribute="height" constant="24" id="v2O-PX-zR3"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-star-gold" translatesAutoresizingMaskIntoConstraints="NO" id="lvk-hR-FGn">
+                                            <rect key="frame" x="29" y="346" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="b6O-a7-Fp2"/>
+                                                <constraint firstAttribute="height" constant="24" id="pxL-ft-Rd2"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-star-gold" translatesAutoresizingMaskIntoConstraints="NO" id="d3v-GH-ece">
+                                            <rect key="frame" x="53" y="346" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="Lvw-P4-ed9"/>
+                                                <constraint firstAttribute="height" constant="24" id="t3F-5C-bsJ"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-star-gold" translatesAutoresizingMaskIntoConstraints="NO" id="wcF-VX-LCf">
+                                            <rect key="frame" x="77" y="346" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="Ji3-Fy-x8b"/>
+                                                <constraint firstAttribute="height" constant="24" id="Pha-tP-KzH"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-star-gold" translatesAutoresizingMaskIntoConstraints="NO" id="0qx-W4-LVJ">
+                                            <rect key="frame" x="101" y="346" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="JVq-oV-lM2"/>
+                                                <constraint firstAttribute="height" constant="24" id="cKl-pZ-j2F"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="QmE-uD-XDC" firstAttribute="leading" secondItem="4yK-MX-4qT" secondAttribute="leading" constant="8" id="0sP-b8-xaR"/>
+                                    <constraint firstItem="lvk-hR-FGn" firstAttribute="centerY" secondItem="4LM-rt-NIn" secondAttribute="centerY" id="2GO-DD-1cH"/>
+                                    <constraint firstItem="lvk-hR-FGn" firstAttribute="leading" secondItem="4LM-rt-NIn" secondAttribute="trailing" id="37U-Ks-y5e"/>
+                                    <constraint firstItem="d3v-GH-ece" firstAttribute="centerY" secondItem="wcF-VX-LCf" secondAttribute="centerY" id="44s-Xy-Zcj"/>
                                     <constraint firstItem="Cqs-CA-Wrc" firstAttribute="leading" secondItem="QmE-uD-XDC" secondAttribute="leading" id="4pO-Gp-uIx"/>
+                                    <constraint firstItem="4LM-rt-NIn" firstAttribute="bottom" secondItem="EsB-0P-obd" secondAttribute="bottom" constant="-5" id="6hj-cl-UBy"/>
+                                    <constraint firstItem="wcF-VX-LCf" firstAttribute="centerY" secondItem="0qx-W4-LVJ" secondAttribute="centerY" id="8qF-Sa-L1G"/>
+                                    <constraint firstItem="lvk-hR-FGn" firstAttribute="centerY" secondItem="d3v-GH-ece" secondAttribute="centerY" id="94W-40-TeR"/>
                                     <constraint firstItem="hhE-yz-QUm" firstAttribute="width" secondItem="4yK-MX-4qT" secondAttribute="width" id="Epr-uk-M9R"/>
                                     <constraint firstItem="fRF-Iz-51G" firstAttribute="top" secondItem="Cqs-CA-Wrc" secondAttribute="bottom" constant="2" id="HFY-la-B4R"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fRF-Iz-51G" secondAttribute="trailing" symbolic="YES" id="IHA-fo-oRc"/>
                                     <constraint firstAttribute="trailing" secondItem="EsB-0P-obd" secondAttribute="trailing" id="Idm-1K-d5j"/>
+                                    <constraint firstItem="0qx-W4-LVJ" firstAttribute="leading" secondItem="wcF-VX-LCf" secondAttribute="trailing" id="K1b-Mz-G7b"/>
                                     <constraint firstItem="hhE-yz-QUm" firstAttribute="centerX" secondItem="4yK-MX-4qT" secondAttribute="centerX" id="MS0-Rj-EyE"/>
                                     <constraint firstItem="Cqs-CA-Wrc" firstAttribute="top" secondItem="QmE-uD-XDC" secondAttribute="bottom" id="Q1H-2E-CvE"/>
                                     <constraint firstItem="EsB-0P-obd" firstAttribute="leading" secondItem="4yK-MX-4qT" secondAttribute="leading" id="R77-5X-d0i"/>
+                                    <constraint firstItem="wcF-VX-LCf" firstAttribute="leading" secondItem="d3v-GH-ece" secondAttribute="trailing" id="Vd2-ps-SeT"/>
                                     <constraint firstItem="1cw-vw-sGi" firstAttribute="top" secondItem="fRF-Iz-51G" secondAttribute="bottom" id="Vz8-34-b62"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QmE-uD-XDC" secondAttribute="trailing" symbolic="YES" id="aIp-Cf-Hmi"/>
                                     <constraint firstItem="hhE-yz-QUm" firstAttribute="height" secondItem="4yK-MX-4qT" secondAttribute="height" id="bq2-wP-Z1T"/>
+                                    <constraint firstItem="4LM-rt-NIn" firstAttribute="leading" secondItem="EsB-0P-obd" secondAttribute="leading" constant="5" id="cHs-i2-C7w"/>
                                     <constraint firstItem="EsB-0P-obd" firstAttribute="top" secondItem="4yK-MX-4qT" secondAttribute="top" id="dSD-rI-Lle"/>
                                     <constraint firstItem="fRF-Iz-51G" firstAttribute="leading" secondItem="Cqs-CA-Wrc" secondAttribute="leading" id="jxS-Pd-saI"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Cqs-CA-Wrc" secondAttribute="trailing" symbolic="YES" id="mos-JL-NWQ"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1cw-vw-sGi" secondAttribute="trailing" symbolic="YES" id="oWh-A9-zhX"/>
                                     <constraint firstItem="QmE-uD-XDC" firstAttribute="top" secondItem="EsB-0P-obd" secondAttribute="bottom" constant="6" id="pAl-MA-kXx"/>
+                                    <constraint firstItem="d3v-GH-ece" firstAttribute="leading" secondItem="lvk-hR-FGn" secondAttribute="trailing" id="qU1-QM-3lT"/>
                                     <constraint firstItem="hhE-yz-QUm" firstAttribute="top" secondItem="4yK-MX-4qT" secondAttribute="top" constant="600" id="rYx-QE-qbi"/>
                                     <constraint firstItem="1cw-vw-sGi" firstAttribute="leading" secondItem="fRF-Iz-51G" secondAttribute="leading" id="wAA-Sw-Gve"/>
                                 </constraints>
@@ -233,6 +278,11 @@
                                     <outlet property="dateLabel" destination="1cw-vw-sGi" id="2Gj-xE-9ZP"/>
                                     <outlet property="locationLabel" destination="fRF-Iz-51G" id="YTv-Pj-Itf"/>
                                     <outlet property="optionsContainerViewConstraint" destination="rYx-QE-qbi" id="2zJ-rP-B8a"/>
+                                    <outlet property="star1ImageView" destination="4LM-rt-NIn" id="qrp-qy-Iyn"/>
+                                    <outlet property="star2ImageView" destination="lvk-hR-FGn" id="HxQ-VS-i9w"/>
+                                    <outlet property="star3ImageView" destination="d3v-GH-ece" id="PUQ-47-RQL"/>
+                                    <outlet property="star4ImageView" destination="wcF-VX-LCf" id="AL5-C8-mXW"/>
+                                    <outlet property="star5ImageView" destination="0qx-W4-LVJ" id="kPI-g3-E1m"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -954,6 +1004,7 @@
         <image name="icon-beer-can" width="40" height="40"/>
         <image name="icon-location" width="40" height="40"/>
         <image name="icon-star" width="40" height="40"/>
+        <image name="icon-star-gold" width="50" height="50"/>
         <image name="stock-beer" width="1654" height="1548"/>
     </resources>
     <inferredMetricsTieBreakers>

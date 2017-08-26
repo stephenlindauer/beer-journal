@@ -58,6 +58,12 @@
     self.dateLabel.text = [log.date stringWithFormat:@"MMM d, h:mm a"];
     self.locationLabel.text = log.location.name;
     self.beerImageView.image = log.image;
+    
+    self.star1ImageView.hidden = log.rating < 1;
+    self.star2ImageView.hidden = log.rating < 2;
+    self.star3ImageView.hidden = log.rating < 3;
+    self.star4ImageView.hidden = log.rating < 4;
+    self.star5ImageView.hidden = log.rating < 5;
 }
 
 
