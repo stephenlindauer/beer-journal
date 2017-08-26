@@ -96,6 +96,7 @@
         BDSetLocationViewController *setLocationViewController = segue.destinationViewController;
         setLocationViewController.locations = self.locations;
         setLocationViewController.delegate = self;
+        setLocationViewController.startingLocation = self.startingLocation;
     }
 }
 

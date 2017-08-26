@@ -61,7 +61,9 @@
 //    l.isCustomUserLocation = YES;
 //    [l saveManagedObjectContext];
   
-    
+    for (Location *location in [Location findAllWithPredicate:[NSPredicate predicateWithFormat:@"isCustomUserLocation = YES"]]) {
+        NSLog(@"location: %f, %f -- %@", location.latitude, location.longitude, location.name);
+    }
     
     
     
@@ -69,7 +71,7 @@
     [self setupAppTheme];
     
     
-    NSLog(@"beers: %@", [Beer findAll]);
+//    NSLog(@"beers: %@", [Beer findAll]);
     
     return YES;
 }
