@@ -54,4 +54,14 @@
     }];
 }
 
+- (void)fetchFullsizeImageAndDetailsAtIndex:(NSInteger)index success:(void (^)(UIImage *image, PHAsset *asset))success
+{
+    CGSize size = CGSizeMake(1200, 1200);
+    
+    [self.imageManager requestImageForAsset:[self.fetchResult objectAtIndex:index] targetSize:size contentMode:PHImageContentModeAspectFill options:self.requestOptions resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+        
+        success(result, [self.fetchResult objectAtIndex:index]);
+    }];
+}
+
 @end

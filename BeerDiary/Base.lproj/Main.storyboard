@@ -440,6 +440,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="NRc-Yv-Ni7"/>
+                    <connections>
+                        <segue destination="EVG-8H-1TT" kind="show" identifier="showBeerDetails" id="MfU-w9-uj2"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLP-k5-CxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -956,5 +959,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="DQE-Bs-DFV"/>
         <segue reference="nW3-dK-Z2b"/>
+        <segue reference="MfU-w9-uj2"/>
     </inferredMetricsTieBreakers>
 </document>

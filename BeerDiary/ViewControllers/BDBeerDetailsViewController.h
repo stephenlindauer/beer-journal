@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class CLLocation;
 @class BeerLog;
 
 @interface BDBeerDetailsViewController : UITableViewController
 
 @property (nonatomic, strong) BeerLog *beerLog;
+@property (nonatomic, strong) CLLocation *startingLocation;
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *imageViewCell;
 @property (weak, nonatomic) IBOutlet UIImageView *beerImageView;

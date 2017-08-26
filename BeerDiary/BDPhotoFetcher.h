@@ -14,4 +14,6 @@
 
 - (void)fetchThumbnailImageAtIndex:(NSInteger)index success:(void (^)(UIImage *image))success;
 
+- (void)fetchFullsizeImageAndDetailsAtIndex:(NSInteger)index success:(void (^)(UIImage *image, PHAsset *asset))success;
+
 @end

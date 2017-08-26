@@ -28,6 +28,8 @@
 
 @property (nonatomic, strong) BDCamPreviewCell *camPreviewCell;
 @property (nonatomic, strong) BDPhotoFetcher *photoFetcher;
+@property (nonatomic, strong) UIImage *selectedImage;
+@property (nonatomic, strong) PHAsset *selectedAsset;
 
 @end
 
@@ -51,17 +53,36 @@
     BDBeerDetailsViewController *detailsViewController = segue.destinationViewController;
     
     BeerLog *log = [BeerLog createEntity];
-//    [log setImage:self.capturedImageView.image];
-    log.date = [NSDate date];
+    [log setImage:self.selectedImage];
+    if (self.selectedAsset) {
+        log.date = self.selectedAsset.creationDate;
+        detailsViewController.startingLocation = self.selectedAsset.location;
+    }
+    else {
+        log.date = [NSDate date];
+    }
     
     
     detailsViewController.beerLog = log;
     
 }
 
+- (void)useSelectedPhoto
+{
+    [self performSegueWithIdentifier:@"showBeerDetails" sender:nil];
+}
+
 - (void)cancel
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if (self.selectedImage == nil) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    
+    else {
+        self.selectedImage = nil;
+        [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+        self.navigationItem.rightBarButtonItem = nil;
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -133,8 +154,11 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0 && self.selectedImage == nil) {
         return [self collectionView:collectionView camPreviewCellForItemAtIndexPath:indexPath];
+    }
+    if (indexPath.section == 0 && self.selectedImage != nil) {
+        return [self collectionView:collectionView confirmationCellForItemAtIndexPath:indexPath];
     }
     if (indexPath.section == 1) {
         return [self collectionView:collectionView photoCellForItemAtIndexPath:indexPath];
@@ -154,10 +178,17 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView photoCellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    BDPhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCell" forIndexPath:indexPath];
+    return cell;
+    
+}
 
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView confirmationCellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     BDPhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCell" forIndexPath:indexPath];
     
-//    cell.photoImageView.image = self.images[@(indexPath.row)];
+    cell.photoImageView.image = self.selectedImage;
     
     return cell;
     
@@ -166,6 +197,20 @@
 
 
 #pragma mark <UICollectionViewDelegate>
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.photoFetcher fetchFullsizeImageAndDetailsAtIndex:indexPath.row success:^(UIImage *image, PHAsset *asset) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.selectedImage = image;
+            self.selectedAsset = asset;
+            [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+            [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleDone target:self action:@selector(useSelectedPhoto)];
+        });
+    }];
+}
 
 /*
  // Uncomment this method to specify if the specified item should be highlighted during tracking

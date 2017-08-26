@@ -251,7 +251,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 - (void)teardown
 {
     dispatch_async( self.sessionQueue, ^{
-        if ( self.setupResult == AVCamSetupResultSuccess ) {
+        if ( self.setupResult == AVCamSetupResultSuccess && self.session.isRunning ) {
             [self.session stopRunning];
             [self removeObservers];
         }

@@ -43,12 +43,15 @@
 
 - (void)lookupLocationIfNeeded
 {
-    if (self.beerLog.location == nil) {
+    if (self.beerLog.location == nil && self.startingLocation == nil) {
         // Setup location manager
         self.locationManager = [CLLocationManager new];
         self.locationManager.delegate = self;
         [self.locationManager requestAlwaysAuthorization];
         [self.locationManager startUpdatingLocation];
+    }
+    else if (self.startingLocation != nil) {
+        [self fetchLocationsFrom:self.startingLocation];
     }
 }
 
