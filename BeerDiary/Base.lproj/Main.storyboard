@@ -342,10 +342,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cyan="0.0" magenta="0.20000000000000001" yellow="0.59999999999999998" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jcc-3p-QOf">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="jcc-3p-QOf">
                             <size key="itemSize" width="375" height="375"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="50" height="91"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
@@ -410,19 +410,30 @@
                                     <outlet property="photoButton" destination="twC-dF-O1v" id="qCc-FR-O2M"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OsO-RZ-sb5">
-                                <rect key="frame" x="0.0" y="385" width="375" height="375"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="OsO-RZ-sb5" customClass="BDPhotoCell">
+                                <rect key="frame" x="137.5" y="375" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stock-beer" translatesAutoresizingMaskIntoConstraints="NO" id="l7U-9L-G9a">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="l7U-9L-G9a" firstAttribute="leading" secondItem="OsO-RZ-sb5" secondAttribute="leading" id="MVV-P7-1k9"/>
+                                    <constraint firstAttribute="trailing" secondItem="l7U-9L-G9a" secondAttribute="trailing" id="Psx-E9-wEF"/>
+                                    <constraint firstItem="l7U-9L-G9a" firstAttribute="top" secondItem="OsO-RZ-sb5" secondAttribute="top" id="YP0-VI-4Y9"/>
+                                    <constraint firstAttribute="bottom" secondItem="l7U-9L-G9a" secondAttribute="bottom" id="hgI-pk-nNK"/>
+                                </constraints>
+                                <size key="customSize" width="100" height="100"/>
+                                <connections>
+                                    <outlet property="photoImageView" destination="l7U-9L-G9a" id="8mm-6H-9Ub"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hre-wH-aan">
-                            <rect key="frame" x="0.0" y="760" width="375" height="91"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="0II-He-r4h" id="0ZD-MF-kNL"/>
                             <outlet property="delegate" destination="0II-He-r4h" id="hpR-Oz-DM9"/>

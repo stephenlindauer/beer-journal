@@ -57,6 +57,8 @@
 		2CD684DC1F46103400AC1697 /* BDBeerSuggestionAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD684DB1F46103400AC1697 /* BDBeerSuggestionAccessoryView.m */; };
 		2CF962811F4E6C6000AECCE9 /* BDDeleteCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF962801F4E6C6000AECCE9 /* BDDeleteCollectionViewController.m */; };
 		2CF962841F4E6CEC00AECCE9 /* BDCamPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF962831F4E6CEC00AECCE9 /* BDCamPreviewCell.m */; };
+		2CF962871F50F47200AECCE9 /* BDPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF962861F50F47200AECCE9 /* BDPhotoCell.m */; };
+		2CF9628E1F50F6C600AECCE9 /* BDPhotoFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF9628D1F50F6C600AECCE9 /* BDPhotoFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,6 +156,10 @@
 		2CF962801F4E6C6000AECCE9 /* BDDeleteCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDDeleteCollectionViewController.m; sourceTree = "<group>"; };
 		2CF962821F4E6CEC00AECCE9 /* BDCamPreviewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDCamPreviewCell.h; sourceTree = "<group>"; };
 		2CF962831F4E6CEC00AECCE9 /* BDCamPreviewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDCamPreviewCell.m; sourceTree = "<group>"; };
+		2CF962851F50F47200AECCE9 /* BDPhotoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPhotoCell.h; sourceTree = "<group>"; };
+		2CF962861F50F47200AECCE9 /* BDPhotoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDPhotoCell.m; sourceTree = "<group>"; };
+		2CF9628C1F50F6C600AECCE9 /* BDPhotoFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPhotoFetcher.h; sourceTree = "<group>"; };
+		2CF9628D1F50F6C600AECCE9 /* BDPhotoFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDPhotoFetcher.m; sourceTree = "<group>"; };
 		D7AA1C856AF2142CD2D523F0 /* Pods_BeerDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E065A342296CE5953C019C4B /* Pods-BeerDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeerDiary/Pods-BeerDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		F6505CE224BA0519D4C66E36 /* Pods-BeerDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerDiary/Pods-BeerDiary.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +191,8 @@
 				2C0AFC201F467A6E00053003 /* BDDashboardViewController.m */,
 				2CF962821F4E6CEC00AECCE9 /* BDCamPreviewCell.h */,
 				2CF962831F4E6CEC00AECCE9 /* BDCamPreviewCell.m */,
+				2CF962851F50F47200AECCE9 /* BDPhotoCell.h */,
+				2CF962861F50F47200AECCE9 /* BDPhotoCell.m */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -244,6 +252,8 @@
 				2C2299481F44865000E7CD85 /* BDBeerSuggestionCell.m */,
 				2CD684D41F46043400AC1697 /* BDNavigationController.h */,
 				2CD684D51F46043400AC1697 /* BDNavigationController.m */,
+				2CF9628C1F50F6C600AECCE9 /* BDPhotoFetcher.h */,
+				2CF9628D1F50F6C600AECCE9 /* BDPhotoFetcher.m */,
 				2CD684DA1F46103400AC1697 /* BDBeerSuggestionAccessoryView.h */,
 				2CD684DB1F46103400AC1697 /* BDBeerSuggestionAccessoryView.m */,
 			);
@@ -514,10 +524,12 @@
 				2C2649381F3DF0540022F5BE /* Brewery+CoreDataClass.m in Sources */,
 				2C0EE0E01F423319000C6BE8 /* BDLocationClient.m in Sources */,
 				2C26493B1F3DF0540022F5BE /* BeerLog+CoreDataProperties.m in Sources */,
+				2CF962871F50F47200AECCE9 /* BDPhotoCell.m in Sources */,
 				2C0EE0EE1F423DE0000C6BE8 /* NSManagedObject+CoreData.m in Sources */,
 				2C26493C1F3DF0540022F5BE /* Beer+CoreDataClass.m in Sources */,
 				2C0EE0DD1F4232B0000C6BE8 /* BDClient.m in Sources */,
 				2CADA90E1F4B8B66005238CA /* BDBeerDetailsViewController.m in Sources */,
+				2CF9628E1F50F6C600AECCE9 /* BDPhotoFetcher.m in Sources */,
 				2C8ACD3D1F44ED83003FAABC /* BDLocationCell.m in Sources */,
 				2C2649181F3DEEB50022F5BE /* ViewController.m in Sources */,
 				2CD684D61F46043400AC1697 /* BDNavigationController.m in Sources */,

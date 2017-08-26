@@ -7,6 +7,7 @@
 //
 
 @import AVFoundation;
+@import Photos;
 
 #import "BDSelectPhotoViewController.h"
 #import "BDCamPreviewView.h"
@@ -16,19 +17,17 @@
 #import "BeerLog+CoreDataClass.h"
 #import "NSManagedObject+CoreData.h"
 #import "BDCamPreviewCell.h"
+#import "BDPhotoCell.h"
+#import "BDPhotoFetcher.h"
 
 
-static void * SessionRunningContext = &SessionRunningContext;
 
-typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
-    AVCamSetupResultSuccess,
-    AVCamSetupResultCameraNotAuthorized,
-    AVCamSetupResultSessionConfigurationFailed
-};
+
 
 @interface BDSelectPhotoViewController ()
 
 @property (nonatomic, strong) BDCamPreviewCell *camPreviewCell;
+@property (nonatomic, strong) BDPhotoFetcher *photoFetcher;
 
 @end
 
@@ -40,6 +39,8 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self action:@selector(cancel)];
 
+    
+    self.photoFetcher = [BDPhotoFetcher new];
 }
 
 
@@ -75,19 +76,51 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 
 #pragma mark <UICollectionViewDataSource>
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        return CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width);
+    }
+    else {
+        return CGSizeMake(self.view.bounds.size.width/4, self.view.bounds.size.width/4);
+    }
+}
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return 2;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
+    switch (section) {
+        case 0:
+            return 1;
+            break;
+            
+        case 1:
+            return self.photoFetcher.count;
+            break;
+            
+        default:
+            return 0;
+    }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (cell == self.camPreviewCell) {
+        NSLog(@"will display cell");
 //        [(BDCamPreviewCell *)cell setup];
+    }
+    
+    if (indexPath.section == 1) {
+        BDPhotoCell *photoCell = (BDPhotoCell *)cell;
+        
+        [self.photoFetcher fetchThumbnailImageAtIndex:indexPath.row success:^(UIImage *image) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                photoCell.photoImageView.image = image;
+            });
+        }];
     }
 }
 
@@ -99,6 +132,17 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == 0) {
+        return [self collectionView:collectionView camPreviewCellForItemAtIndexPath:indexPath];
+    }
+    if (indexPath.section == 1) {
+        return [self collectionView:collectionView photoCellForItemAtIndexPath:indexPath];
+    }
+    return nil;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView camPreviewCellForItemAtIndexPath:(NSIndexPath *)indexPath {
     BDCamPreviewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CamPreviewCell" forIndexPath:indexPath];
     
     self.camPreviewCell = cell;
@@ -108,6 +152,18 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
     
     return cell;
 }
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView photoCellForItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    BDPhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCell" forIndexPath:indexPath];
+    
+//    cell.photoImageView.image = self.images[@(indexPath.row)];
+    
+    return cell;
+    
+}
+
+
 
 #pragma mark <UICollectionViewDelegate>
 
