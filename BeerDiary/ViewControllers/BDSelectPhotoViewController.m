@@ -24,7 +24,7 @@
 
 
 
-@interface BDSelectPhotoViewController ()
+@interface BDSelectPhotoViewController () <BDCamPreviewCellDelegate>
 
 @property (nonatomic, strong) BDCamPreviewCell *camPreviewCell;
 @property (nonatomic, strong) BDPhotoFetcher *photoFetcher;
@@ -170,6 +170,7 @@
     BDCamPreviewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CamPreviewCell" forIndexPath:indexPath];
     
     self.camPreviewCell = cell;
+    cell.viewController = self;
     
     // Configure the cell
     [cell setup];
@@ -203,11 +204,8 @@
     [self.photoFetcher fetchFullsizeImageAndDetailsAtIndex:indexPath.row success:^(UIImage *image, PHAsset *asset) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.selectedImage = image;
             self.selectedAsset = asset;
-            [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
-            [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
-            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleDone target:self action:@selector(useSelectedPhoto)];
+            [self selectImage:image];
         });
     }];
 }
@@ -241,6 +239,20 @@
  }
  */
 
+#pragma mark - Cam preview cell delegate
 
+- (void)cameraTookPhoto:(UIImage *)image
+{
+    self.selectedAsset = nil;
+    [self selectImage:image];
+}
+
+- (void)selectImage:(UIImage *)image
+{
+    self.selectedImage = image;
+    [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleDone target:self action:@selector(useSelectedPhoto)];
+}
 
 @end

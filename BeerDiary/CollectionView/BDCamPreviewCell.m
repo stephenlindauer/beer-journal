@@ -25,7 +25,7 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
 @interface BDCamPreviewCell ()
 
 
-@property (weak, nonatomic) IBOutlet BDCamPreviewView *camPreviewView;
+
 
 
 // Session management.
@@ -398,12 +398,14 @@ typedef NS_ENUM( NSInteger, AVCamSetupResult ) {
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIImage *image = [photoCaptureDelegate capturedImage];
-                image = [[image cropCenter] resize:CGSizeMake(960, 960)];
+                image = [[image cropCenter] resize:CGSizeMake(1200, 1200)];
 //                self.capturedImageView.image = image;
 //                self.capturedImageView.hidden = NO;
-                self.camPreviewView.hidden = YES;
+//                self.camPreviewView.hidden = YES;
                 
-                [self.viewController performSegueWithIdentifier:@"showBeerDetails" sender:nil];
+                [self.viewController cameraTookPhoto:image];
+                
+//                [self.viewController performSegueWithIdentifier:@"showBeerDetails" sender:nil];
             });
         }];
         
