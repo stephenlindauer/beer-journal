@@ -12,11 +12,13 @@
 #import <CoreLocation/CoreLocation.h>
 #import "NSManagedObject+CoreData.h"
 #import "Location+CoreDataClass.h"
+#import "BDLocationClient.h"
 
 
 @interface BDSetLocationViewController () <UISearchBarDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, strong) NSArray <Location *> *filteredLocations;
+@property (nonatomic, strong) NSTimer *searchDelayTimer;
 
 @end
 
@@ -98,14 +100,56 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
+    // Clear any pending searches
+    if (self.searchDelayTimer != nil) {
+        [self.searchDelayTimer invalidate];
+        self.searchDelayTimer = nil;
+    }
+    
     if (searchText.length == 0) {
         self.filteredLocations = self.locations;
     }
     else {
         self.filteredLocations = [self.locations filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", searchText]];
+        
+        
+        self.searchDelayTimer = [NSTimer scheduledTimerWithTimeInterval:0.4 repeats:NO block:^(NSTimer * _Nonnull timer) {
+            [self searchLocations];
+        }];
     }
     
     [self.tableView reloadData];
+}
+
+- (void)searchLocations
+{
+    [[BDLocationClient new] getLocationsFrom:self.startingLocation withSearchTerm:self.searchBar.text success:^(NSArray<Location *> *locations) {
+        
+        if (locations.count > 0) {
+            
+            NSArray *allValidLocations = [locations arrayByAddingObjectsFromArray:[Location findAllWithPredicate:[NSPredicate predicateWithFormat:@"isCustomUserLocation = YES"]]];
+            
+            allValidLocations = [allValidLocations sortedArrayUsingComparator:^NSComparisonResult(Location * _Nonnull obj1, Location * _Nonnull obj2) {
+                
+                
+                CGFloat d1 = [self.startingLocation distanceFromLocation:[[CLLocation alloc] initWithLatitude:obj1.latitude longitude:obj1.longitude]];
+                CGFloat d2 = [self.startingLocation distanceFromLocation:[[CLLocation alloc] initWithLatitude:obj2.latitude longitude:obj2.longitude]];
+                
+                return d1 > d2;
+            }];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.locations = allValidLocations;
+            });
+        }
+        else {
+            NSLog(@"Info: No locations found");
+        }
+        
+    } failure:^(NSError *error) {
+        NSLog(@"Error: %@", error.localizedDescription);
+        NSLog(@"Details: %@", error.userInfo);
+    }];
 }
 
 @end

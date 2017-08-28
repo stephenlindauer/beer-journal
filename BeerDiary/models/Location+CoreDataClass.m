@@ -18,8 +18,10 @@
     Location *location = [self createEntity];
     
     location.name = dict[@"name"];
-    location.latitude = [dict[@"coordinates"][@"latitude"] floatValue];
-    location.longitude = [dict[@"coordinates"][@"longitude"] floatValue];
+    if (dict[@"coordinates"] && dict[@"coordinates"][@"latitude"] != [NSNull null]) {
+        location.latitude = [dict[@"coordinates"][@"latitude"] floatValue];
+        location.longitude = [dict[@"coordinates"][@"longitude"] floatValue];
+    }
     
     return location;
 }

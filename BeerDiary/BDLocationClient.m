@@ -23,11 +23,13 @@
 }
 
 
-- (void)getLocationsFrom:(CLLocation *)location success:(void (^)(NSArray <Location *> *locations))success failure:(void (^)(NSError *error))failure
+- (void)getLocationsFrom:(CLLocation *)location withSearchTerm:(NSString *)searchTerm success:(void (^)(NSArray <Location *> *locations))success failure:(void (^)(NSError *error))failure
 {
     AFHTTPSessionManager *manager = [self sessionManager];
     
-    NSString *url = [NSString stringWithFormat:@"https://api.yelp.com/v3/businesses/search?latitude=%f&longitude=%f&limit=50&sort_by=distance", location.coordinate.latitude, location.coordinate.longitude];
+    NSString *url = [NSString stringWithFormat:@"https://api.yelp.com/v3/businesses/search?latitude=%f&longitude=%f&limit=50&radius=1000&sort_by=distance&term=%@", location.coordinate.latitude, location.coordinate.longitude, searchTerm];
+    
+    NSLog(@"<INFO> URL: %@", url);
     
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         

@@ -14,6 +14,6 @@
 
 @interface BDLocationClient : NSObject
 
-- (void)getLocationsFrom:(CLLocation *)location success:(void (^)(NSArray <Location *>* locations))success failure:(void (^)(NSError *error))failure;
+- (void)getLocationsFrom:(CLLocation *)location withSearchTerm:(NSString *)searchTerm success:(void (^)(NSArray <Location *>* locations))success failure:(void (^)(NSError *error))failure;
 
 @end

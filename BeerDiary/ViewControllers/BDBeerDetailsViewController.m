@@ -125,7 +125,7 @@
 
 - (void)fetchLocationsFrom:(CLLocation *)location
 {
-    [[BDLocationClient new] getLocationsFrom:location success:^(NSArray *locations) {
+    [[BDLocationClient new] getLocationsFrom:location withSearchTerm:@"" success:^(NSArray *locations) {
         if (locations.count > 0) {
             
             NSArray *allValidLocations = [locations arrayByAddingObjectsFromArray:[Location findAllWithPredicate:[NSPredicate predicateWithFormat:@"isCustomUserLocation = YES"]]];
