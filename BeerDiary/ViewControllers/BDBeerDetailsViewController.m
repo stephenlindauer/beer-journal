@@ -41,6 +41,15 @@
     [self configureFields];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    if (self.isMovingFromParentViewController) {
+        [self.beerLog deleteEntity];
+    }
+}
+
 - (void)lookupLocationIfNeeded
 {
     if (self.beerLog.location == nil && self.startingLocation == nil) {
