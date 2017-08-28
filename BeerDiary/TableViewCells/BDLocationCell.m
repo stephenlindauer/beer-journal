@@ -28,6 +28,13 @@
     _location = location;
     
     self.locationLabel.text = location.name;
+    
+    if (location.isCustomUserLocation) {
+        self.locationLabel.textColor = [UIColor colorWithRed:0.3 green:0.3 blue:1 alpha:1];
+    }
+    else {
+        self.locationLabel.textColor = [UIColor blackColor];
+    }
 }
 
 @end
