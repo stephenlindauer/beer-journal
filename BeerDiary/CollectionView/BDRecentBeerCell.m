@@ -34,7 +34,7 @@
 
 - (void)promptForDelete
 {
-    self.optionsContainerViewConstraint.constant = self.bounds.size.height;
+    self.optionsContainerViewConstraint.constant = -self.bounds.size.height;
     [self layoutIfNeeded];
     
     self.optionsContainerViewConstraint.constant = 0;
@@ -49,6 +49,10 @@
 - (void)setLog:(BeerLog *)log
 {
     _log = log;
+    
+    // Make sure options aren't showing
+    self.optionsContainerViewConstraint.constant = -self.bounds.size.height;
+    [self layoutIfNeeded];
     
     self.profileImageView.layer.cornerRadius = 20;
     
@@ -67,26 +71,12 @@
 }
 
 
-- (IBAction)showOptions:(id)sender {
-    self.optionsContainerViewConstraint.constant = self.bounds.size.height;
-    [self layoutIfNeeded];
-    self.hidden = NO;
-    
-    self.optionsContainerViewConstraint.constant = 0;
-    
-    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        [self layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        
-    }];
-}
-
 - (IBAction)confirmDelete:(id)sender {
     [self.delegate beerLogWasDeleted:self.log];
 }
 
 - (IBAction)dismissOptions:(id)sender {
-    self.optionsContainerViewConstraint.constant = self.bounds.size.height;
+    self.optionsContainerViewConstraint.constant = -self.bounds.size.height;
     
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         [self layoutIfNeeded];
