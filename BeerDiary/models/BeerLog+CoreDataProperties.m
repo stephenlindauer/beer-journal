@@ -1,9 +1,8 @@
 //
 //  BeerLog+CoreDataProperties.m
-//  BeerDiary
+//  
 //
-//  Created by Stephen Lindauer on 8/17/17.
-//  Copyright © 2017 Stephen Lindauer. All rights reserved.
+//  Created by Stephen Lindauer on 9/6/17.
 //
 //
 
@@ -16,10 +15,11 @@
 }
 
 @dynamic date;
+@dynamic imageData;
 @dynamic locationLatitude;
 @dynamic locationLongitude;
 @dynamic rating;
-@dynamic imageData;
+@dynamic beerLogID;
 @dynamic beer;
 @dynamic location;
 

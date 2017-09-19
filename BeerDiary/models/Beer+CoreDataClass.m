@@ -11,4 +11,13 @@
 
 @implementation Beer
 
+- (NSDictionary *)toDictionary
+{
+    return @{
+             @"name": self.name,
+//             @"brewery": self.brewery,
+             @"user_create_by": @1
+             };
+}
+
 @end

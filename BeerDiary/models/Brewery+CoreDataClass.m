@@ -11,4 +11,12 @@
 
 @implementation Brewery
 
+- (NSDictionary *)toDictionary
+{
+    return @{
+             @"name":self.name,
+             @"user_created_by":@1
+             };
+}
+
 @end

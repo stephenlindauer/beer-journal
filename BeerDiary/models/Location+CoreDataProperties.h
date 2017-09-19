@@ -1,9 +1,8 @@
 //
 //  Location+CoreDataProperties.h
-//  BeerDiary
+//  
 //
-//  Created by Stephen Lindauer on 8/16/17.
-//  Copyright © 2017 Stephen Lindauer. All rights reserved.
+//  Created by Stephen Lindauer on 9/6/17.
 //
 //
 
@@ -16,10 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<Location *> *)fetchRequest;
 
+@property (nonatomic) BOOL isCustomUserLocation;
 @property (nonatomic) float latitude;
 @property (nonatomic) float longitude;
 @property (nullable, nonatomic, copy) NSString *name;
-@property (nonatomic) BOOL isCustomUserLocation;
+@property (nonatomic) int32_t locationID;
 @property (nullable, nonatomic, retain) NSSet<BeerLog *> *beers;
 
 @end

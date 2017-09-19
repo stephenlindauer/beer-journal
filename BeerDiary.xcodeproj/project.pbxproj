@@ -48,6 +48,8 @@
 		2C5B16A01F3E060600E1D32B /* LUAutocompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B169C1F3E060500E1D32B /* LUAutocompleteView.swift */; };
 		2C5B16A11F3E060600E1D32B /* LUAutocompleteViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B169D1F3E060500E1D32B /* LUAutocompleteViewDelegate.swift */; };
 		2C5B16A51F3E06A100E1D32B /* BDAddBeerLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B16A41F3E06A100E1D32B /* BDAddBeerLogViewController.m */; };
+		2C80E3721F60FD96006E2B1E /* BDOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C80E3711F60FD96006E2B1E /* BDOperation.m */; };
+		2C80E3751F60FDB4006E2B1E /* BDPostBeerOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C80E3741F60FDB4006E2B1E /* BDPostBeerOperation.m */; };
 		2C8ACD391F44E84E003FAABC /* BDSetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8ACD381F44E84E003FAABC /* BDSetLocationViewController.m */; };
 		2C8ACD3D1F44ED83003FAABC /* BDLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8ACD3C1F44ED83003FAABC /* BDLocationCell.m */; };
 		2C8ACD401F44F653003FAABC /* BDGenericTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C8ACD3F1F44F653003FAABC /* BDGenericTextCell.m */; };
@@ -59,6 +61,7 @@
 		2CF962841F4E6CEC00AECCE9 /* BDCamPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF962831F4E6CEC00AECCE9 /* BDCamPreviewCell.m */; };
 		2CF962871F50F47200AECCE9 /* BDPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF962861F50F47200AECCE9 /* BDPhotoCell.m */; };
 		2CF9628E1F50F6C600AECCE9 /* BDPhotoFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF9628D1F50F6C600AECCE9 /* BDPhotoFetcher.m */; };
+		2CF962911F55FE8500AECCE9 /* SDLEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF962901F55FE8500AECCE9 /* SDLEnvironment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +140,11 @@
 		2C5B169D1F3E060500E1D32B /* LUAutocompleteViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUAutocompleteViewDelegate.swift; sourceTree = "<group>"; };
 		2C5B16A31F3E06A100E1D32B /* BDAddBeerLogViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDAddBeerLogViewController.h; sourceTree = "<group>"; };
 		2C5B16A41F3E06A100E1D32B /* BDAddBeerLogViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDAddBeerLogViewController.m; sourceTree = "<group>"; };
+		2C80E3611F60F7BD006E2B1E /* BeerDiary 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BeerDiary 5.xcdatamodel"; sourceTree = "<group>"; };
+		2C80E3701F60FD96006E2B1E /* BDOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDOperation.h; sourceTree = "<group>"; };
+		2C80E3711F60FD96006E2B1E /* BDOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDOperation.m; sourceTree = "<group>"; };
+		2C80E3731F60FDB4006E2B1E /* BDPostBeerOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPostBeerOperation.h; sourceTree = "<group>"; };
+		2C80E3741F60FDB4006E2B1E /* BDPostBeerOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDPostBeerOperation.m; sourceTree = "<group>"; };
 		2C8ACD371F44E84E003FAABC /* BDSetLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSetLocationViewController.h; sourceTree = "<group>"; };
 		2C8ACD381F44E84E003FAABC /* BDSetLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDSetLocationViewController.m; sourceTree = "<group>"; };
 		2C8ACD3B1F44ED83003FAABC /* BDLocationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDLocationCell.h; sourceTree = "<group>"; };
@@ -160,6 +168,8 @@
 		2CF962861F50F47200AECCE9 /* BDPhotoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDPhotoCell.m; sourceTree = "<group>"; };
 		2CF9628C1F50F6C600AECCE9 /* BDPhotoFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDPhotoFetcher.h; sourceTree = "<group>"; };
 		2CF9628D1F50F6C600AECCE9 /* BDPhotoFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDPhotoFetcher.m; sourceTree = "<group>"; };
+		2CF9628F1F55FE8500AECCE9 /* SDLEnvironment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDLEnvironment.h; sourceTree = "<group>"; };
+		2CF962901F55FE8500AECCE9 /* SDLEnvironment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDLEnvironment.m; sourceTree = "<group>"; };
 		D7AA1C856AF2142CD2D523F0 /* Pods_BeerDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E065A342296CE5953C019C4B /* Pods-BeerDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeerDiary/Pods-BeerDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		F6505CE224BA0519D4C66E36 /* Pods-BeerDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerDiary/Pods-BeerDiary.release.xcconfig"; sourceTree = "<group>"; };
@@ -244,8 +254,7 @@
 				2C2649251F3DEEB50022F5BE /* main.m */,
 				2C26491C1F3DEEB50022F5BE /* BeerDiary.xcdatamodeld */,
 				2C5B16981F3E060400E1D32B /* BeerDiary-Bridging-Header.h */,
-				2C0EE0DB1F4232B0000C6BE8 /* BDClient.h */,
-				2C0EE0DC1F4232B0000C6BE8 /* BDClient.m */,
+				2C80E36E1F60FD06006E2B1E /* Network */,
 				2C0EE0DE1F423319000C6BE8 /* BDLocationClient.h */,
 				2C0EE0DF1F423319000C6BE8 /* BDLocationClient.m */,
 				2C2299471F44865000E7CD85 /* BDBeerSuggestionCell.h */,
@@ -316,6 +325,8 @@
 				2C5B16971F3DFBE300E1D32B /* UIViewController+ErrorAndLoading.m */,
 				2C0AFC181F464C0B00053003 /* UIImage+Utils.h */,
 				2C0AFC191F464C0B00053003 /* UIImage+Utils.m */,
+				2CF9628F1F55FE8500AECCE9 /* SDLEnvironment.h */,
+				2CF962901F55FE8500AECCE9 /* SDLEnvironment.m */,
 			);
 			path = "ios-utils";
 			sourceTree = "<group>";
@@ -330,6 +341,27 @@
 				2C5B169D1F3E060500E1D32B /* LUAutocompleteViewDelegate.swift */,
 			);
 			path = LUAutocomplete;
+			sourceTree = "<group>";
+		};
+		2C80E36E1F60FD06006E2B1E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2C80E36F1F60FD14006E2B1E /* Operations */,
+				2C0EE0DB1F4232B0000C6BE8 /* BDClient.h */,
+				2C0EE0DC1F4232B0000C6BE8 /* BDClient.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2C80E36F1F60FD14006E2B1E /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				2C80E3701F60FD96006E2B1E /* BDOperation.h */,
+				2C80E3711F60FD96006E2B1E /* BDOperation.m */,
+				2C80E3731F60FDB4006E2B1E /* BDPostBeerOperation.h */,
+				2C80E3741F60FDB4006E2B1E /* BDPostBeerOperation.m */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 		2C8ACD3A1F44ED61003FAABC /* TableViewCells */ = {
@@ -515,11 +547,13 @@
 				2C0EE0E91F423D3F000C6BE8 /* Location+CoreDataProperties.m in Sources */,
 				2C8ACD391F44E84E003FAABC /* BDSetLocationViewController.m in Sources */,
 				2C22994D1F44923100E7CD85 /* BDSuggestedBeersLayout.m in Sources */,
+				2C80E3751F60FDB4006E2B1E /* BDPostBeerOperation.m in Sources */,
 				2CF962811F4E6C6000AECCE9 /* BDDeleteCollectionViewController.m in Sources */,
 				2C5B169E1F3E060600E1D32B /* LUAutocompleteViewDataSource.swift in Sources */,
 				2C0EE0E81F423D3F000C6BE8 /* Location+CoreDataClass.m in Sources */,
 				2C26491E1F3DEEB50022F5BE /* BeerDiary.xcdatamodeld in Sources */,
 				2C0EE0EF1F423DE0000C6BE8 /* NSManagedObjectContext+Utils.m in Sources */,
+				2C80E3721F60FD96006E2B1E /* BDOperation.m in Sources */,
 				2C0AFC2C1F490E0200053003 /* AVCamPhotoCaptureDelegate.m in Sources */,
 				2C2649381F3DF0540022F5BE /* Brewery+CoreDataClass.m in Sources */,
 				2C0EE0E01F423319000C6BE8 /* BDLocationClient.m in Sources */,
@@ -549,6 +583,7 @@
 				2C0AFC291F490B0400053003 /* BDCamPreviewView.m in Sources */,
 				2C0AFC261F490AE100053003 /* BDSelectPhotoViewController.m in Sources */,
 				2CF962841F4E6CEC00AECCE9 /* BDCamPreviewCell.m in Sources */,
+				2CF962911F55FE8500AECCE9 /* SDLEnvironment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,12 +777,13 @@
 		2C26491C1F3DEEB50022F5BE /* BeerDiary.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				2C80E3611F60F7BD006E2B1E /* BeerDiary 5.xcdatamodel */,
 				2C0AFC1B1F465BDB00053003 /* BeerDiary 4.xcdatamodel */,
 				2C8ACD411F45092D003FAABC /* BeerDiary 3.xcdatamodel */,
 				2C0EE0E31F423C9A000C6BE8 /* BeerDiary 2.xcdatamodel */,
 				2C26491D1F3DEEB50022F5BE /* BeerDiary.xcdatamodel */,
 			);
-			currentVersion = 2C0AFC1B1F465BDB00053003 /* BeerDiary 4.xcdatamodel */;
+			currentVersion = 2C80E3611F60F7BD006E2B1E /* BeerDiary 5.xcdatamodel */;
 			path = BeerDiary.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

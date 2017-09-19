@@ -125,6 +125,8 @@
         beer.brewery = brewery;
     }
     
+    
+    
     self.beerLog.beer = beer;
     [self.beerLog saveManagedObjectContext];
     

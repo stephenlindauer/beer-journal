@@ -63,6 +63,18 @@
             ReferencedContainer = "container:BeerDiary.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "EnvServerBaseURL"
+            value = "http://192.168.0.4:8020"
+            isEnabled = "NO">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "EnvServerBaseURL"
+            value = "http://localhost:8020"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

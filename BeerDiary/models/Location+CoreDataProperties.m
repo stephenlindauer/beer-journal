@@ -1,9 +1,8 @@
 //
 //  Location+CoreDataProperties.m
-//  BeerDiary
+//  
 //
-//  Created by Stephen Lindauer on 8/16/17.
-//  Copyright © 2017 Stephen Lindauer. All rights reserved.
+//  Created by Stephen Lindauer on 9/6/17.
 //
 //
 
@@ -15,10 +14,11 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"Location"];
 }
 
+@dynamic isCustomUserLocation;
 @dynamic latitude;
 @dynamic longitude;
 @dynamic name;
-@dynamic isCustomUserLocation;
+@dynamic locationID;
 @dynamic beers;
 
 @end

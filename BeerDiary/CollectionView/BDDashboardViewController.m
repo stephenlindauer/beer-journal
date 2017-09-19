@@ -11,6 +11,9 @@
 #import "BDRecentBeerCell.h"
 #import "NSManagedObjectContext+Utils.h"
 #import "NSManagedObject+CoreData.h"
+#import "BDClient.h"
+#import "UIImage+Utils.h"
+
 
 @interface BDDashboardViewController () <BDRecentBeerCellDelegate>
 
@@ -79,6 +82,21 @@ static NSString * const reuseIdentifier = @"RecentBeerCell";
 }
 
 #pragma mark <UICollectionViewDelegate>
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    BeerLog *log = self.recentBeers[indexPath.row];
+    
+    UIImage *image = [[log.image cropCenter] resize:CGSizeMake(1200, 1200)];
+//    UIImage *image = [[log.image cropCenter] resize:CGSizeMake(120, 120)];
+    [BDClient uploadImage:image progress:^(CGFloat progress) {
+        
+    } success:^(NSString *url) {
+        NSLog(@"image: %@", url);
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking

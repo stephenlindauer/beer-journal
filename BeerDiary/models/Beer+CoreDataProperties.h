@@ -1,9 +1,8 @@
 //
 //  Beer+CoreDataProperties.h
-//  BeerDiary
+//  
 //
-//  Created by Stephen Lindauer on 8/11/17.
-//  Copyright © 2017 Stephen Lindauer. All rights reserved.
+//  Created by Stephen Lindauer on 9/6/17.
 //
 //
 
@@ -17,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<Beer *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSString *name;
+@property (nonatomic) int32_t beerID;
 @property (nullable, nonatomic, retain) Brewery *brewery;
 @property (nullable, nonatomic, retain) NSSet<BeerLog *> *logs;
 

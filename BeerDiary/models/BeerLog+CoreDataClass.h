@@ -11,6 +11,7 @@
 #import <CoreData/CoreData.h>
 #import <UIKit/UIKit.h>
 
+#import "Location+CoreDataClass.h"
 
 @class Beer;
 
